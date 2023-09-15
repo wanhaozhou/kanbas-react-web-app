@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades</title>
+</head>
+
+<body>
+    <table width="100%">
+        <tr>
+            <!-- Kanbas navigation -->
+            <td valign="top">
+                <ul>
+                    <li><a href="/kanbas/profile/index.html">Account</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/kanbas/home.html">Courses</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Inbox</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Studio</a></li>
+                    <li><a href="#">Comments</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </td>
+
+            <!-- Course navigation -->
+            <td valign="top">
+                <ul>
+                    <li><a href="/kanbas/home.html">Home</a></li>
+                    <li><a href="#">Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom Meetings</a></li>
+                    <li><a href="/kanbas/assignments/index.html">Assignments</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="/kanbas/grades.html">Grades</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Panopto Video</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Rubrics</a></li>
+                    <li><a href="#">Outcomes</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Syllabus</a></li>
+                    <li><a href="/kanbas/settings/details.html">Settings</a></li>
+                </ul>
+            </td>
+
+            <!-- Grades -->
+            <td valign="top">
+                <select>
+                    <option value="gradebook">Gradebook</option>
+                </select>
+                <input type="button" value="Import" />
+                <select>
+                    <option value="export">Export</option>
+                </select>
+                <input type="button" value="Configure" />
+                <h2>Student Names</h2>
+                <input type="text" placeholder="Search Students" />
+                <h2>Assignment Names</h2>
+                <input type="text" placeholder="Search Assignments" />
+                <br />
+                <input type="button" value="Apply Filters" />
+                <table border="1" width="100%">
+                    <thead>
+                        <th>Student Name</th>
+                        <th>A1 SETUP Out of 100</th>
+                        <th>A2 HTML Out of 100</th>
+                        <th>A3 CSS Out of 100</th>
+                        <th>A4 BOOTSTRAP Out of 100</th>
+                        <th>A5 JAVASCRIPT Out of 100</th>
+                        <th>A6 REACT Out of 100</th>
+                        <th>A7 REDUX Out of 100</th>
+                        <th>A8 NODE Out of 100</th>
+                        <th>A9 MONGO Out of 100</th>
+                    </thead>
+                    <tr>
+                        <td>Alice</td>
+                        <td>97</td>
+                        <td>97</td>
+                        <td><input type="text" value="95" /></td>
+                        <td>97</td>
+                        <td>97</td>
+                        <td>91</td>
+                        <td>94</td>
+                        <td>95</td>
+                        <td>92</td>
+                    </tr>
+                    <tr>
+                        <td>Bob</td>
+                        <td>92</td>
+                        <td>91</td>
+                        <td>92</td>
+                        <td>95</td>
+                        <td>94</td>
+                        <td>97</td>
+                        <td><input type="text" value="94" /></td>
+                        <td>97</td>
+                        <td>97</td>
+                    </tr>
+                    <tr>
+                        <td>Charlie</td>
+                        <td>93</td>
+                        <td>92</td>
+                        <td>91</td>
+                        <td>93</td>
+                        <td>94</td>
+                        <td><input type="text" value="92" /></td>
+                        <td>97</td>
+                        <td>97</td>
+                        <td>97</td>
+                    </tr>
+                    <tr>
+                        <td>Douglas</td>
+                        <td>95</td>
+                        <td><input type="text" value="93" /></td>
+                        <td>97</td>
+                        <td>91</td>
+                        <td>92</td>
+                        <td>93</td>
+                        <td>94</td>
+                        <td>99</td>
+                        <td>96</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
