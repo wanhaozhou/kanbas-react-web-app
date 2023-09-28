@@ -1,12 +1,75 @@
 <!-- Kanbas navigation -->
-<ul>
-    <li><a href="/kanbas/profile/index.html">Account</a></li>
-    <li><a href="#">Dashboard</a></li>
-    <li><a href="/kanbas/home.html">Courses</a></li>
-    <li><a href="#">Calendar</a></li>
-    <li><a href="#">Inbox</a></li>
-    <li><a href="#">History</a></li>
-    <li><a href="#">Studio</a></li>
-    <li><a href="#">Comments</a></li>
-    <li><a href="#">Help</a></li>
-</ul>
+
+<head>
+    <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="/vendors/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="/kanbas/components/kanbas-navigation.css" />
+</head>
+
+<body>
+    <ul class="wd-kb-nav-ul">
+        <!-- nu logo -->
+        <li class="wd-kb-nav-li">
+            <div>
+                <img class="wd-kb-nav-logo" src="/nu-logo.png" />
+            </div>
+        </li>
+        <!--  -->
+
+        <!-- avatar -->
+        <li class="wd-kb-nav-li wd-kb-nav-li-active">
+            <div>
+                <img class="wd-kb-nav-avatar" src="/avatar-50.png" />
+            </div>
+            <a href="/kanbas/profile/index.html">Account</a>
+        </li>
+
+        <li class="wd-kb-nav-li ">
+            <div>
+                <img class=" wd-kb-nav-avatar" src="/avatar-50.png" />
+            </div>
+            <a href="/kanbas/profile/index.html">Account</a>
+        </li>
+        <!--  -->
+
+        <li class="wd-kb-nav-li">
+            <i class="fas fa-tachometer-alt fa-lg"></i>
+            <a href="#">Dashboard</a>
+        </li>
+
+        <li class="wd-kb-nav-li">
+            <i class="fas fa-book fa-lg"></i>
+            <a href="/kanbas/home.html">Courses</a>
+        </li>
+
+        <li class="wd-kb-nav-li wd-kb-nav-li-active">
+            <i class="fas fa-calendar-alt fa-lg"></i>
+            <a href="#">Calendar</a>
+        </li>
+
+        <li class="wd-kb-nav-li">
+            <i class="fas fa-inbox fa-lg"></i>
+            <a href="#">Inbox</a>
+        </li>
+
+        <li class="wd-kb-nav-li ">
+            <i class="far fa-clock fa-lg"></i>
+            <a href="#">History</a>
+        </li>
+
+        <li class="wd-kb-nav-li">
+            <i class="fab fa-youtube fa-lg"></i>
+            <a href="#">Studio</a>
+        </li>
+
+        <li class="wd-kb-nav-li">
+            <i class="fas fa-sign-out-alt fa-lg"></i>
+            <a href="#">Commons</a>
+        </li>
+
+        <li class="wd-kb-nav-li">
+            <i class="fas fa-question-circle fa-lg"></i>
+            <a href="#">Help</a>
+        </li>
+    </ul>
+</body>
