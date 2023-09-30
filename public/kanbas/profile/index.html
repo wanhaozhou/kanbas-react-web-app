@@ -4,88 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="/vendors/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="/kanbas/style.css" />
+    <link rel="stylesheet" href="/kanbas/profile/index.css" />
     <title>Profile</title>
 </head>
 
 <body>
-    <table width="100%">
-        <tr>
-            <!-- Kanbas navigation -->
-            <td valign="top" width="5%">
-                <ul>
-                    <li><a href="/kanbas/profile/index.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="/kanbas/home.html">Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Comments</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </td>
-
-            <!-- Account navigation -->
-            <td valign="top" width="15%">
-                <ul>
-                    <li><a href="#">Notifications</a></li>
-                    <li><a href="/kanbas/profile/index.html">Profile</a></li>
-                    <li><a href="#">Files</a></li>
-                    <li><a href="/kanbas/profile/edit.html">Settings</a></li>
-                    <li><a href="#">ePortfolios</a></li>
-                    <li><a href="#">Shared Content</a></li>
-                    <li><a href="#">The Hub</a></li>
-                    <li><a href="#">Qwickly Course Tools</a></li>
-                    <li><a href="#">Global Announcements</a></li>
-                </ul>
-            </td>
-
-            <!-- Profile -->
-            <td>
-                <table>
-                    <tr>
-                        <td>
-                            Wanhao Zhou's Profile
-                            <hr />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <i class="fas fa-user fa-lg wd-gray fa-8x" style="margin: 30px; padding: 30px;"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="wd-pf-section">
                             <h2>Wanhao Zhou</h2>
-                        </td>
-                        <td>
-                            <form action="/kanbas/profile/edit.html"><button>&#x270E; Edit Profile</button></form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>
-                                Contact
-                            </h2>
-                            No registered services, you can add some on the <a
-                                href="/kanbas/profile/edit.html">settings</a> page.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>
-                                Biography
-                            </h2>
-                            Student at Northeastern U.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>
+                        </div>
+                        <div class="wd-pf-section">
+                            <h3>Contact</h3>
+                            <div>
+                                No registered services, you can add some on the <a
+                                    href="/kanbas/profile/edit.html">settings</a>
+                                page.
+                            </div>
+                        </div>
+                        <div class="wd-pf-section">
+                            <h3>Biography</h3>
+                            <div>
+                                Student at Northeastern U.
+                            </div>
+                        </div>
+                        <div class="wd-pf-section">
+                            <h3>
                                 Links
-                            </h2>
-                            <a href="https://github.com/wanhaozhou">GitHub</a>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+                            </h3>
+                            <div>
+                                <i class="fas fa-link"></i>
+                                <a href="https://www.youtube.com/watch?v=yvv13q691bE">YouTube</a>
+                                <i class="fas fa-external-link-alt wd-theme"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <a href="/kanbas/profile/edit.html">
+                    <button type="button" class="btn wd-bg-gainsboro">
+                        <i class="fas fa-pencil-alt fa-rotate-270"></i>
+                        Edit Profile
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

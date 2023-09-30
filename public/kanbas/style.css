@@ -1,0 +1,47 @@
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.wd-gray {
+    color: gray;
+}
+
+.wd-theme {
+    color: crimson;
+}
+
+.wd-bg-gainsboro {
+    background-color: gainsboro;
+}
+
+.wd-no-left-margin {
+    margin-left: 0;
+}
+
+* {
+    font-family: "Lato" sans-serif;
+}
+
+.wd-margin-top-sm {
+    margin-top: 10px;
+}
+
+.wd-margin-top-md {
+    margin-top: 40px;
+}
+
+.wd-card-img-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.wd-card-img-button a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.wd-card-width {
+    width: 270px;
+}
