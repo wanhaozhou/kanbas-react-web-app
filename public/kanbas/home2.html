@@ -19,7 +19,7 @@
     <div style="display: flex;
     flex-direction: row;
   ">
-        <div>
+        <div class="d-none d-md-block">
             <ul class="wd-kb-nav-ul">
                 <!-- nu logo -->
                 <li class="wd-kb-nav-li">
@@ -130,27 +130,54 @@
             </ul>
         </div>
         <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <nav style="--bs-breadcrumb-divider: '>';" class="wd-font-large">
-                        <a href="#"> <i class="fas fa-bars"></i> </a>
-                        <ol class="breadcrumb wd-inline-flex">
-                            <li class="breadcrumb-item"><a href="#">CS 5610, Fall 2023, Section 1</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Home</li>
-                        </ol>
-                    </nav>
-                </div>
-                <div class="col">
-                    <div class="float-end">
-                        <button type="button" class="btn btn-outline-secondary">
-                            <i class="fas fa-glasses"></i>
-                            Student View
-                        </button>
+            <!-- large screen -->
+            <div class="d-none d-md-block mt-2">
+                <div class="row">
+                    <div class="col">
+                        <nav style="--bs-breadcrumb-divider: '>';">
+                            <a href="#"> <i class="fas fa-bars"></i> </a>
+                            <ol class="breadcrumb wd-inline-flex">
+                                <li class="breadcrumb-item"><a href="#">CS 5610, Fall 2023, Section 1</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Home</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col">
+                        <div class="float-end">
+                            <button type="button" class="btn btn-outline-secondary btn-sm">
+                                <i class="fas fa-glasses"></i>
+                                Student View
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- small screen -->
+            <div class="d-block d-md-none mt-2 mb-3 bg-black ps-2 pe-2 pt-1 pb-1">
+                <div class="row text-white">
+                    <div class="col">
+                        <span class="">
+                            <a href="/kanbas/components/kanbas-navigation-sm.html" class="text-white">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <p class="text-center">CS 5610. Web Development. Modules</p>
+                    </div>
+                    <div class="col">
+                        <span class="float-end">
+                            <i class="fas fa-glasses"></i>
+                            <a><i class="fas fa-chevron-down"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+
             <div class="row">
-                <div class="col-3 col-xxl-2">
+                <div class="d-none d-md-block col-md-3 col-xxl-2">
                     <ul class="wd-ac-nav-ul ms-0">
                         <li class="wd-ac-nav-li wd-ac-nav-li-active"><a href="#">
                                 <div>Home</div>
@@ -181,14 +208,14 @@
                             </a></li>
                     </ul>
                 </div>
-                <div class="col-9 col-xxl-7">
+                <div class="col-12 col-md-9 col-xxl-7">
                     <div class="row pb-3" style="border-bottom: 2px solid gainsboro;">
                         <div class="col">
                             <div class="float-end">
-                                <button type="button" class="btn btn-outline-secondary">Collapse All</button>
-                                <button type="button" class="btn btn-outline-secondary">View Progress</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm">Collapse All</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm">View Progress</button>
                                 <span class="dropdown">
-                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    <button class="btn btn-outline-secondary dropdown-toggle btn-sm" type="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fas fa-check-circle" style="color: green;"></i>
                                         Publish All
@@ -198,8 +225,8 @@
                                         <li><a class="dropdown-item" href="#">Action 2</a></li>
                                     </ul>
                                 </span>
-                                <button type="button" class="btn btn-danger">Module</button>
-                                <button type="button" class="btn btn-outline-secondary">
+                                <button type="button" class="btn btn-danger btn-sm">Module</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm">
                                     <i class="fas fa-ellipsis-v"></i>
                                 </button>
                             </div>
@@ -349,7 +376,7 @@
                                     <i class="fas fa-ellipsis-v" style="color: gray;"></i>
                                 </span>
                                 <span class="ms-4">
-                                    Full Stack Developer - Chapter 1 - Introduction
+                                    Full Stack Developer - Chapter 1
                                 </span>
                                 <span class="float-end">
                                     <span class="me-2">
@@ -366,7 +393,7 @@
                                     <i class="fas fa-ellipsis-v" style="color: gray;"></i>
                                 </span>
                                 <span class="ms-4">
-                                    Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
+                                    Full Stack Developer - Chapter 2
                                 </span>
                                 <span class="float-end">
                                     <span class="me-2">
@@ -400,7 +427,7 @@
                                 </span>
                                 <i class="fas fa-link" style="color: green;"></i>
                                 <span class="ms-1">
-                                    <a href="#">Introduction to Web Development Links to an external site.</a>
+                                    <a href="#">Introduction to Web Development.</a>
                                 </span>
                                 <i class="fas fa-external-link-alt wd-theme"></i>
                                 <span class="float-end">
@@ -419,7 +446,7 @@
                                 </span>
                                 <i class="fas fa-link" style="color: green;"></i>
                                 <span class="ms-1">
-                                    <a href="">Creating an HTTP server with Node.js Links to an external site.</a>
+                                    <a href="">Creating an HTTP server with Node.js.</a>
                                 </span>
                                 <i class="fas fa-external-link-alt wd-theme"></i>
                                 <span class="float-end">
@@ -438,7 +465,7 @@
                                 </span>
                                 <i class="fas fa-link" style="color: green;"></i>
                                 <span class="ms-1">
-                                    <a href="">Creating a React Application Links to an external site.</a>
+                                    <a href="">Creating a React Application.</a>
                                 </span>
                                 <i class="fas fa-external-link-alt wd-theme"></i>
                                 <span class="float-end">
@@ -595,7 +622,7 @@
                                     <i class="fas fa-ellipsis-v" style="color: gray;"></i>
                                 </span>
                                 <span class="ms-4">
-                                    Full Stack Developer - Chapter 1 - Introduction
+                                    Full Stack Developer - Chapter 1
                                 </span>
                                 <span class="float-end">
                                     <span class="me-2">
@@ -612,7 +639,7 @@
                                     <i class="fas fa-ellipsis-v" style="color: gray;"></i>
                                 </span>
                                 <span class="ms-4">
-                                    Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
+                                    Full Stack Developer - Chapter 2
                                 </span>
                                 <span class="float-end">
                                     <span class="me-2">
@@ -646,7 +673,7 @@
                                 </span>
                                 <i class="fas fa-link" style="color: green;"></i>
                                 <span class="ms-1">
-                                    <a href="#">Introduction to Web Development Links to an external site.</a>
+                                    <a href="#">Introduction to Web Development</a>
                                 </span>
                                 <i class="fas fa-external-link-alt wd-theme"></i>
                                 <span class="float-end">
@@ -665,7 +692,7 @@
                                 </span>
                                 <i class="fas fa-link" style="color: green;"></i>
                                 <span class="ms-1">
-                                    <a href="">Creating an HTTP server with Node.js Links to an external site.</a>
+                                    <a href="">Creating an HTTP server with Node.js.</a>
                                 </span>
                                 <i class="fas fa-external-link-alt wd-theme"></i>
                                 <span class="float-end">
@@ -684,7 +711,7 @@
                                 </span>
                                 <i class="fas fa-link" style="color: green;"></i>
                                 <span class="ms-1">
-                                    <a href="">Creating a React Application Links to an external site.</a>
+                                    <a href="">Creating a React Application.</a>
                                 </span>
                                 <i class="fas fa-external-link-alt wd-theme"></i>
                                 <span class="float-end">
@@ -705,11 +732,11 @@
                     <h4>Course Status</h4>
                     <div class="row mb-2">
                         <span>
-                            <button type="button" class="btn btn-outline-secondary">
+                            <button type="button" class="btn btn-outline-secondary btn-sm">
                                 <i class="fas fa-ban"></i>
                                 Unpublish
                             </button>
-                            <button type="button" class="btn btn-success">
+                            <button type="button" class="btn btn-success btn-sm">
                                 <i class="fas fa-check-circle"></i>
                                 Published
                             </button>
