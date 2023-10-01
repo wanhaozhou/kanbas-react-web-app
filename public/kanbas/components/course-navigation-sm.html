@@ -4,36 +4,79 @@
     <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.css" />
     <link rel="stylesheet" href="/vendors/fontawesome/css/all.css" />
     <link rel="stylesheet" href="/kanbas/components/account-navigation.css" />
+    <link rel="stylesheet" href="/kanbas/style.css" />
+
 </head>
 
 <body>
-    <ul class="wd-ac-nav-ul">
-        <li class="wd-ac-nav-li"><a href="#">
-                <div>Home</div>
-            </a></li>
-        <li class="wd-ac-nav-li wd-ac-nav-li-active"><a href="#">
-                <div>Modules</div>
-            </a></li>
-        <li class="wd-ac-nav-li"><a href="#">
-                <div>Piazza</div>
-            </a></li>
-        <li class="wd-ac-nav-li"><a href="#">
-                <div>Zoom Meetings</div>
-            </a></li>
-        <li class="wd-ac-nav-li"><a href="#">
-                <div>Assignments</div>
-            </a></li>
-        <li class="wd-ac-nav-li"><a href="#">
-                <div>Quizzes</div>
-            </a></li>
-        <li class="wd-ac-nav-li"><a href="#">
-                <div>Grades</div>
-            </a></li>
-        <li class="wd-ac-nav-li"><a href="#">
-                <div>People</div>
-            </a></li>
-        <li class="wd-ac-nav-li"><a href="#">
-                <div>Settings</div>
-            </a></li>
-    </ul>
+    <div class="container-fluid">
+        <div class="d-block d-md-none mt-2 mb-3 bg-black ps-2 pe-2 pt-2 pb-1">
+            <div class="row text-white">
+                <div class="col">
+                    <span class="">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </div>
+                <div class="col">
+                    <p class="text-center">CS 5610. Web Development. Modules</p>
+                </div>
+                <div class="col">
+                    <span class="float-end">
+                        <i class="fas fa-glasses"></i>
+                        <a href="#" onclick="history.back()" class="text-white">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item border-0">
+                <a href="#">
+                    <i class="fas fa-tachometer-alt fa-lg"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="list-group-item border-0">
+                <a href="#">
+                    <i class="fas fa-book fa-lg"></i>
+                    Courses
+                </a>
+
+            </li>
+            <li class="list-group-item border-0">
+                <a href="#">
+                    <i class="fas fa-calendar-alt fa-lg"></i>
+                    Calendar
+                </a>
+
+            </li>
+            <li class="list-group-item border-0">
+                <a href="#">
+                    <i class="fas fa-inbox fa-lg"></i>
+                    Inbox
+                </a>
+            </li>
+            <li class="list-group-item border-0">
+                <a href="#">
+                    <i class="fab fa-youtube fa-lg"></i>
+                    Studio
+                </a>
+            </li>
+            <li class="list-group-item border-0">
+                <a href="#">
+                    <i class="fas fa-sign-out-alt fa-lg"></i>
+                    Commons
+                </a>
+            </li>
+            <li class="list-group-item border-0">
+                <a href="#">
+                    <i class="fas fa-question-circle fa-lg"></i>
+                    Help
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
 </body>

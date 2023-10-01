@@ -58,3 +58,7 @@
 .wd-font-large {
     font-size: 1.5em;
 }
+
+.wd-no-radius {
+    border-radius: 0;
+}
