@@ -69,3 +69,12 @@
     border-bottom: 1px solid;
     border-bottom-color: gainsboro;
 }
+
+.wd-root-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.wd-border-light-gray {
+    border-color: gainsboro;
+}

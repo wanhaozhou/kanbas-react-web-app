@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="/vendors/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="/kanbas/style.css" />
+
+    <link rel="stylesheet" href="/kanbas/components/kanbas-navigation.css" />
+    <link rel="stylesheet" href="/kanbas/components/account-navigation.css" />
+    <title>Grades</title>
+</head>
+
+<body>
+    <div class="d-flex">
+        <div class="d-none d-md-block">
+            <ul class="wd-kb-nav-ul">
+                <!-- nu logo -->
+                <li class="wd-kb-nav-li">
+                    <div>
+                        <img class="wd-kb-nav-logo" src="/nu-logo.png" />
+                    </div>
+                </li>
+
+                <!-- avatar -->
+                <li class="wd-kb-nav-li">
+                    <a href="/kanbas/profile/index.html">
+                        <div>
+                            <img class="wd-kb-nav-avatar" src="/avatar-50.png" />
+                        </div>
+                        <div>
+                            Account
+                        </div>
+                    </a>
+                </li>
+
+                <li class="wd-kb-nav-li">
+                    <a href="#">
+                        <div>
+                            <i class="fas fa-tachometer-alt fa-lg"></i>
+                        </div>
+                        <div>
+                            Dashboard
+                        </div>
+                    </a>
+                </li>
+
+                <li class="wd-kb-nav-li wd-kb-nav-li-active">
+                    <a href="/kanbas/home.html">
+                        <div>
+                            <i class="fas fa-book fa-lg"></i>
+                        </div>
+                        <div>
+                            Courses
+                        </div>
+                    </a>
+                </li>
+
+                <li class="wd-kb-nav-li">
+                    <a href="#">
+                        <div>
+                            <i class="fas fa-calendar-alt fa-lg"></i>
+                        </div>
+                        <div>
+                            Calendar
+                        </div>
+                    </a>
+                </li>
+
+                <li class="wd-kb-nav-li">
+                    <a href="#">
+                        <div>
+                            <i class="fas fa-inbox fa-lg"></i>
+                        </div>
+                        <div>
+                            Inbox
+                        </div>
+                    </a>
+                </li>
+
+                <li class="wd-kb-nav-li ">
+                    <a href="#">
+                        <div>
+                            <i class="far fa-clock fa-lg"></i>
+                        </div>
+                        <div>
+                            History
+                        </div>
+                    </a>
+                </li>
+
+                <li class="wd-kb-nav-li">
+                    <a href="#">
+                        <div>
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </div>
+                        <div>
+                            Studio
+                        </div>
+                    </a>
+                </li>
+
+                <li class="wd-kb-nav-li">
+                    <a href="#">
+                        <div>
+                            <i class="fas fa-sign-out-alt fa-lg"></i>
+                        </div>
+                        <div>
+                            Commons
+                        </div>
+                    </a>
+                </li>
+
+                <li class="wd-kb-nav-li">
+                    <a href="#">
+                        <div>
+                            <i class="fas fa-question-circle fa-lg"></i>
+                        </div>
+                        <div>
+                            Help
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container-fluid me-1">
+            <!-- large screen -->
+            <div class="d-none d-md-block mt-2 mb-2">
+                <div class="row">
+                    <div class="col">
+                        <nav style="--bs-breadcrumb-divider: '>';">
+                            <span class="me-2"><a href="#"> <i class="fas fa-bars"></i> </a></span>
+                            <ol class="breadcrumb wd-inline-flex">
+                                <li class="breadcrumb-item"><a href="#">CS 5610, Fall 2023, Section 1</a></li>
+                                <li class="breadcrumb-item active"><a href="#">Grades</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col">
+                        <div class="float-end">
+                            <button type="button" class="btn btn-outline-secondary btn-sm">
+                                <i class="fas fa-glasses"></i>
+                                Student View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- small screen -->
+            <div class="d-block d-md-none mt-2 mb-3 bg-black ps-2 pe-2 pt-2 pb-1">
+                <div class="row text-white">
+                    <div class="col">
+                        <span class="">
+                            <a href="/kanbas/components/kanbas-navigation-sm.html" class="text-white">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <p class="text-center">CS 5610. Web Development. Modules</p>
+                    </div>
+                    <div class="col">
+                        <span class="float-end">
+                            <i class="fas fa-glasses"></i>
+                            <a href="/kanbas/components/course-navigation-sm.html" class="text-white">
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="d-none d-md-block col-2">
+                    <ul class="wd-ac-nav-ul ms-0">
+                        <li class="wd-ac-nav-li"><a href="#">
+                                <div>Home</div>
+                            </a></li>
+                        <li class="wd-ac-nav-li"><a href="#">
+                                <div>Modules</div>
+                            </a></li>
+                        <li class="wd-ac-nav-li"><a href="#">
+                                <div>Piazza</div>
+                            </a></li>
+                        <li class="wd-ac-nav-li"><a href="#">
+                                <div>Zoom Meetings</div>
+                            </a></li>
+                        <li class="wd-ac-nav-li"><a href="#">
+                                <div>Assignments</div>
+                            </a></li>
+                        <li class="wd-ac-nav-li"><a href="#">
+                                <div>Quizzes</div>
+                            </a></li>
+                        <li class="wd-ac-nav-li wd-ac-nav-li-active"><a href="#">
+                                <div>Grades</div>
+                            </a></li>
+                        <li class="wd-ac-nav-li"><a href="#">
+                                <div>People</div>
+                            </a></li>
+                        <li class="wd-ac-nav-li"><a href="#">
+                                <div>Settings</div>
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-10">
+                    <div class="row pb-3" style="border-bottom: 2px solid gainsboro;">
+                        <div class="col">
+                            <span class="float-end">
+                                <button type="button" class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-file-import"></i>
+                                    Import
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-file-export"></i>
+                                    Export
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-cog"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="row">
+                            <div class="col-5">
+                                <h4>Student Names</h4>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="search-name"
+                                            placeholder="Search Students">
+                                        <label for="search-name">Search Students</label>
+                                    </div>
+                                    <span class="input-group-text"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <h4>Assignment Names</h4>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="search-assignment"
+                                            placeholder="Search Assignments">
+                                        <label for="search-assignment">Search Assignments</label>
+                                    </div>
+                                    <span class="input-group-text"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-outline-secondary text-start">
+                                    <i class="fas fa-filter"></i>
+                                    Apply Filters
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead class="table-light text-center">
+                                            <th class="text-start">Student Name</th>
+                                            <th>A1 SETUP Out of 100</th>
+                                            <th>A2 HTML Out of 100</th>
+                                            <th>A3 CSS Out of 100</th>
+                                            <th>A4 BOOTSTRAP Out of 100</th>
+                                            <th>A5 JAVASCRIPT Out of 100</th>
+                                            <th>A6 REACT Out of 100</th>
+                                            <th>A7 REDUX Out of 100</th>
+                                            <th>A8 NODE Out of 100</th>
+                                            <th>A9 MONGO Out of 100</th>
+                                        </thead>
+                                        <tr>
+                                            <td><a href="#">Alice</a></td>
+                                            <td>97</td>
+                                            <td>97</td>
+                                            <td><input type="number" class="form-control" value="100"></td>
+                                            <td>97</td>
+                                            <td>97</td>
+                                            <td>91</td>
+                                            <td>94</td>
+                                            <td>95</td>
+                                            <td>92</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Bob</a></td>
+                                            <td>92</td>
+                                            <td>91</td>
+                                            <td>92</td>
+                                            <td>95</td>
+                                            <td>94</td>
+                                            <td>97</td>
+                                            <td><input type="number" class="form-control" value="100"></td>
+                                            <td>97</td>
+                                            <td>97</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Charlie</a></td>
+                                            <td>93</td>
+                                            <td>92</td>
+                                            <td>91</td>
+                                            <td>93</td>
+                                            <td>94</td>
+                                            <td><input type="number" class="form-control" value="100"></td>
+                                            <td>97</td>
+                                            <td>97</td>
+                                            <td>97</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Douglas</a></td>
+                                            <td>95</td>
+                                            <td><input type="number" class="form-control" value="100"></td>
+                                            <td>97</td>
+                                            <td>91</td>
+                                            <td>92</td>
+                                            <td>93</td>
+                                            <td>94</td>
+                                            <td>99</td>
+                                            <td>96</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
