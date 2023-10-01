@@ -62,3 +62,10 @@
 .wd-no-radius {
     border-radius: 0;
 }
+
+.wd-assignment-border {
+    border-left: 4px solid;
+    border-left-color: green;
+    border-bottom: 1px solid;
+    border-bottom-color: gainsboro;
+}
