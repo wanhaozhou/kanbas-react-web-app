@@ -28,5 +28,6 @@
 }
 
 .wd-ac-nav-li-active a div {
+    padding-left: 6px;
     color: black;
 }
