@@ -46,7 +46,7 @@
     width: 270px;
 }
 
-* a {
+a {
     text-decoration: none;
     color: crimson;
 }
@@ -77,4 +77,12 @@
 
 .wd-border-light-gray {
     border-color: gainsboro;
+}
+
+.wd-red {
+    color: crimson !important;
+}
+
+.wd-black {
+    color: black !important;
 }
