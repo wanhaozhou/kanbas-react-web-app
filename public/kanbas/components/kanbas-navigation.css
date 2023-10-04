@@ -57,3 +57,7 @@
 .wd-kb-nav-li-active .wd-kb-nav-avatar {
     border-color: grey;
 }
+
+.wd-kb-nav-li-active .fa-stack>* {
+    color: gray !important;
+}
