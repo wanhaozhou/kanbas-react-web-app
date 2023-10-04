@@ -280,11 +280,17 @@
                                     <i class="fas fa-file-import"></i>
                                     Import
                                 </button>
-                                <button type="button" class="btn btn-outline-secondary btn-sm">
-                                    <i class="fas fa-file-export"></i>
-                                    Export
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
+                                <span class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle btn-sm" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-file-export"></i>
+                                        Export
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                    </ul>
+                                </span>
                                 <button type="button" class="btn btn-outline-secondary btn-sm">
                                     <i class="fas fa-cog"></i>
                                 </button>
