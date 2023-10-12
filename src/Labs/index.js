@@ -2,7 +2,7 @@ import Assignment3 from "./a3";
 
 const Labs = () => {
     return (
-        <div>
+        <div className="container">
             <Assignment3 />
         </div>
     );
