@@ -14,7 +14,6 @@ const Kanbas = () => {
                 <h1>Courses</h1>
             </div>
         </div>
-
     );
 }
 
