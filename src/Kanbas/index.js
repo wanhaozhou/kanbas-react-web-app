@@ -11,7 +11,7 @@ const Kanbas = () => {
             <div>
                 <KanbasNavigation />
             </div>
-            <div className='container-fluid ms-3 me-1' style={{ minWidth: '0%' }}>
+            <div className='container-fluid ms-3 me-1 mt-3' style={{ minWidth: '0%' }}>
                 <Routes>
                     <Route path='/' element={<Navigate to='Dashboard' />} />
                     <Route path='Account' element={<h1>Account</h1>} />
