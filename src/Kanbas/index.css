@@ -24,26 +24,21 @@
 }
 
 .wd-margin-top-sm {
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
 
 .wd-margin-top-md {
-    margin-top: 40px;
+    margin-top: 40px !important;
 }
 
 .wd-card-img-button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-
-.wd-card-img-button a {
-    text-decoration: none;
-    color: whitesmoke;
+    position: absolute !important;
+    top: 10px !important;
+    right: 20px !important;
 }
 
 .wd-card-width {
-    width: 270px;
+    width: 270px !important;
 }
 
 a {
