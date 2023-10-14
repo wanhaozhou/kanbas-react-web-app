@@ -8,7 +8,7 @@ import { courses } from '../Database';
 const Dashboard = () => {
     return (
         <>
-            <div className='row'>
+            <div className='row mt-2'>
                 <h1>Dashboard</h1>
             </div>
             <div className='row mt-1'>

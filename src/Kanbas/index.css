@@ -47,7 +47,7 @@ a {
 }
 
 .wd-inline-flex {
-    display: inline-flex;
+    display: inline-flex !important;
 }
 
 .wd-font-large {
@@ -55,7 +55,7 @@ a {
 }
 
 .wd-no-radius {
-    border-radius: 0;
+    border-radius: 0 !important;
 }
 
 .wd-assignment-border {

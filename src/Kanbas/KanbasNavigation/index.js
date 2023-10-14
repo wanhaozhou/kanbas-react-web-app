@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import {
     FaQuestionCircle, FaTachometerAlt,
@@ -34,8 +34,7 @@ const KanbasNavigation = () => {
                 </div>
             </li>
             <li className={`wd-kb-nav-li ${accountActive ? 'wd-kb-nav-li-active' : ''}`}>
-                {// eslint-disable-next-line
-                }<a href=''>
+                <Link to='#'>
                     <div>
                         <IconContext.Provider value={accountActive ? accountActiveLogo : accountInactiveLogo}>
                             <PiUserCircleFill />
@@ -44,19 +43,18 @@ const KanbasNavigation = () => {
                     <div>
                         Account
                     </div>
-                </a>
+                </Link>
             </li>
             {textAndLogo.map((item, index) =>
             (<li className={`wd-kb-nav-li ${pathname.includes(item[0]) ? 'wd-kb-nav-li-active' : ''}`} key={index}>
-                {// eslint-disable-next-line
-                }<a href=''>
+                <Link to={item[0] === 'Courses' ? '#' : item[0]}>
                     <div>
                         <IconContext.Provider value={redLogo}>{item[1]}</IconContext.Provider>
                     </div>
                     <div>
                         {item[0]}
                     </div>
-                </a>
+                </Link>
             </li>)
             )}
         </ul >
