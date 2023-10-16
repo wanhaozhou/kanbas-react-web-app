@@ -15,7 +15,7 @@ const CourseNavigation = () => {
     return (
         <ul className='wd-ac-nav-ul' >
             {links.map((link, index) => (
-                <li className={`wd-ac-nav-li ${pathname.includes(link.replace(/\s/g, '')) && 'wd-ac-nav-li-active'}`}>
+                <li key={index} className={`wd-ac-nav-li ${pathname.includes(link.replace(/\s/g, '')) && 'wd-ac-nav-li-active'}`}>
                     <Link
                         key={index}
                         to={`/Kanbas/Courses/${courseId}/${link.replace(/\s/g, '')}`}

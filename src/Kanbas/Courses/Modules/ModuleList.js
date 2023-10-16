@@ -1,12 +1,25 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { FaCheckCircle, FaEllipsisV } from 'react-icons/fa';
+import { FaCheckCircle, FaEllipsisV, FaGripVertical, FaPlus } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
 
 import { modules } from "../../Database";
 
 const ModuleList = () => {
     const { courseId } = useParams();
-    console.log(modules);
+    let modulesFind = modules.filter((module) => module.course === courseId);
+    if (modulesFind.length === 0) {
+        modulesFind = [
+            { name: "Lorem ipsum", description: "Lorem ipsum dolor sit amet adipiscing" },
+            { name: "Mi bibendum neque", description: "Mi bibendum neque egestas congue quisque" },
+            { name: "Elementum curabitur", description: "Elementum curabitur vitae nunc sed velit" },
+        ]
+    }
+    const sub = [
+        "Lorem ipsum dolor sit amet adipiscing",
+        "Mi bibendum neque egestas congue quisque",
+        "Elementum curabitur vitae nunc sed velit",
+    ];
     return (
         <>
             <div className="row pb-3" style={{ borderBottom: '2px solid gainsboro' }}>
@@ -42,45 +55,88 @@ const ModuleList = () => {
                 </div>
             </div>
             <div className="mt-3">
-                <ul className="list-group mb-4 wd-no-radius">
-                    {
-                        modules
-                            .filter((module) => module.course === courseId)
-                            .map((module, index) => (
-                                <li key={index} className="list-group-item list-group-item-secondary">
-                                    <p>{module.name}</p>
-                                    <p>{module.description}</p>
+                {
+                    modulesFind
+                        .map((module, index) => (
+                            <ul key={index} className="list-group mb-4 wd-no-radius">
+                                <li className="list-group-item list-group-item-secondary">
+                                    <span className="me-2">
+                                        <IconContext.Provider value={{ color: 'gray', size: 20 }}>
+                                            <FaGripVertical />
+                                        </IconContext.Provider>
+                                    </span>
+                                    {module.name}
+                                    <span className="float-end">
+                                        <span className="me-2">
+                                            <IconContext.Provider value={{ color: 'green', size: 20 }}>
+                                                <FaCheckCircle />
+                                            </IconContext.Provider>
+                                        </span>
+                                        <span className="me-2">
+                                            <IconContext.Provider value={{ color: 'gray', size: 20 }}>
+                                                <FaPlus />
+                                            </IconContext.Provider>
+                                        </span>
+                                        <span className="me-2">
+                                            <IconContext.Provider value={{ color: 'gray', size: 20 }}>
+                                                <FaEllipsisV />
+                                            </IconContext.Provider>
+                                        </span>
+                                    </span>
                                 </li>
-                            ))
-                    }
-                </ul>
-            </div>
+                                <li className="list-group-item">
+                                    <span className="me-2">
+                                        <IconContext.Provider value={{ color: 'gray', size: 20 }}>
+                                            <FaGripVertical />
+                                        </IconContext.Provider>
+                                    </span>
+                                    <span className="ms-2">
+                                        {module.description}
+                                    </span>
+                                    <span className="float-end">
+                                        <span className="me-2">
+                                            <IconContext.Provider value={{ color: 'green', size: 20 }}>
+                                                <FaCheckCircle />
+                                            </IconContext.Provider>
+                                        </span>
+                                        <span className="me-2">
+                                            <IconContext.Provider value={{ color: 'gray', size: 20 }}>
+                                                <FaEllipsisV />
+                                            </IconContext.Provider>
+                                        </span>
+                                    </span>
+                                </li>
+                                {
+                                    sub.map((submodule, subindex) => (
+                                        <li key={subindex} className="list-group-item">
+                                            <span className="me-2">
+                                                <IconContext.Provider value={{ color: 'gray', size: 20 }}>
+                                                    <FaGripVertical />
+                                                </IconContext.Provider>
+                                            </span>
+                                            <span className="ms-5">
+                                                {submodule}
+                                            </span>
+                                            <span className="float-end">
+                                                <span className="me-2">
+                                                    <IconContext.Provider value={{ color: 'green', size: 20 }}>
+                                                        <FaCheckCircle />
+                                                    </IconContext.Provider>
+                                                </span>
+                                                <span className="me-2">
+                                                    <IconContext.Provider value={{ color: 'gray', size: 20 }}>
+                                                        <FaEllipsisV />
+                                                    </IconContext.Provider>
+                                                </span>
+                                            </span>
+                                        </li>
+                                    ))
+                                }
+                            </ul >
+                        ))}
+            </div >
         </>
     );
 }
 
 export default ModuleList;
-
-/*
-
-<li class="list-group-item list-group-item-secondary">
-                                <span class="me-2">
-                                    <i class="fas fa-grip-vertical wd-gray"></i>
-                                </span>
-                                Week 0 - Intro
-                                <span class="float-end">
-                                    <span class="me-2">
-                                        <i class="fas fa-check-circle" style="color: green;"></i>
-                                    </span>
-                                    <span class="me-2">
-                                        <i class="fas fa-plus"></i>
-                                    </span>
-                                    <span class="me-2">
-                                        <i class="fas fa-ellipsis-v" style="color: gray;"></i>
-                                    </span>
-                                </span>
-                            </li>
-
-
-
-*/

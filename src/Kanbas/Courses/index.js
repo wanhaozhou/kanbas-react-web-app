@@ -5,6 +5,7 @@ import { IconContext } from 'react-icons';
 import { courses } from '../../Kanbas/Database';
 import CourseNavigation from './CourseNavigation';
 import Modules from "./Modules";
+import Home from './Home';
 
 const Courses = () => {
     const { courseId } = useParams();
@@ -60,7 +61,7 @@ const Courses = () => {
                 <>
                     <Routes>
                         <Route path='/' element={<Navigate to='Home' />} />
-                        <Route path='Home' element={<h1>Home</h1>} />
+                        <Route path='Home' element={<Home />} />
                         <Route path='Modules' element={<Modules />} />
                         <Route path='Assignments' element={<h1>Assignments</h1>} />
                         <Route
