@@ -32,7 +32,7 @@ const Courses = () => {
                                         {course.name}
                                     </span>
                                 </li>
-                                <li className='breadcrumb-item active' aria-current='page'>{location.pathname.split('/').at(-1)}</li>
+                                <li className='breadcrumb-item active' aria-current='page'>{decodeURI(location.pathname.split('/').at(-1))}</li>
                             </ol>
                         </nav>
                     </div>
@@ -64,10 +64,7 @@ const Courses = () => {
                         <Route path='Home' element={<Home />} />
                         <Route path='Modules' element={<Modules />} />
                         <Route path='Assignments' element={<h1>Assignments</h1>} />
-                        <Route
-                            path='Assignments/:assignmentId'
-                            element={<h1>Assignment Editor</h1>}
-                        />
+                        <Route path='Assignments/:assignmentId' element={<h1>Assignment Editor</h1>} />
                         <Route path='Grades' element={<h1>Grades</h1>} />
                     </Routes>
                 </>
