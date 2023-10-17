@@ -8,6 +8,7 @@ import Modules from "./Modules";
 import Home from './Home';
 import Assignments from "./Assignments";
 import AssignmentEditor from './Assignments/AssignmentEditor';
+import Grades from './Grades';
 
 
 const Courses = () => {
@@ -80,7 +81,7 @@ const Courses = () => {
                         <Route path='Modules' element={<Modules />} />
                         <Route path='Assignments' element={<Assignments />} />
                         <Route path='Assignments/:assignmentId' element={<AssignmentEditor />} />
-                        <Route path='Grades' element={<h1>Grades</h1>} />
+                        <Route path='Grades' element={<Grades />} />
                     </Routes>
                 </>
             </div>
