@@ -59,10 +59,10 @@ a {
 }
 
 .wd-assignment-border {
-    border-left: 4px solid;
-    border-left-color: green;
-    border-bottom: 1px solid;
-    border-bottom-color: gainsboro;
+    border-left: 4px solid !important;
+    border-left-color: green !important;
+    border-bottom: 1px solid !important;
+    border-bottom-color: gainsboro !important;
 }
 
 .wd-root-container {

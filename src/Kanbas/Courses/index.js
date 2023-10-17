@@ -6,11 +6,18 @@ import { courses } from '../../Kanbas/Database';
 import CourseNavigation from './CourseNavigation';
 import Modules from "./Modules";
 import Home from './Home';
+import Assignments from "./Assignments";
+import AssignmentEditor from './Assignments/AssignmentEditor';
+
 
 const Courses = () => {
     const { courseId } = useParams();
-    const location = useLocation();
     const course = courses.find((course) => course._id === courseId);
+
+    const location = useLocation();
+    const locations = location.pathname.split('/');
+    const assignmentEdit = locations.length >= 2 && locations.at(-2) === 'Assignments';
+
     return (
         <>
             {/* large screen */}
@@ -26,13 +33,21 @@ const Courses = () => {
                                         </IconContext.Provider>
                                     </span>
                                     <span className='wd-red me-2' >
-                                        {course.number}
+                                        {course._id}
                                     </span>
                                     <span className='wd-red' >
                                         {course.name}
                                     </span>
                                 </li>
-                                <li className='breadcrumb-item active' aria-current='page'>{decodeURI(location.pathname.split('/').at(-1))}</li>
+                                {assignmentEdit ?
+                                    <li className='breadcrumb-item'>
+                                        <span className='wd-red' >
+                                            {locations.at(-2)}
+                                        </span>
+                                    </li> :
+                                    <></>
+                                }
+                                <li className='breadcrumb-item active' aria-current='page'>{decodeURI(locations.at(-1))}</li>
                             </ol>
                         </nav>
                     </div>
@@ -63,8 +78,8 @@ const Courses = () => {
                         <Route path='/' element={<Navigate to='Home' />} />
                         <Route path='Home' element={<Home />} />
                         <Route path='Modules' element={<Modules />} />
-                        <Route path='Assignments' element={<h1>Assignments</h1>} />
-                        <Route path='Assignments/:assignmentId' element={<h1>Assignment Editor</h1>} />
+                        <Route path='Assignments' element={<Assignments />} />
+                        <Route path='Assignments/:assignmentId' element={<AssignmentEditor />} />
                         <Route path='Grades' element={<h1>Grades</h1>} />
                     </Routes>
                 </>

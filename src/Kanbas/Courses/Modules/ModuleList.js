@@ -22,7 +22,7 @@ const ModuleList = () => {
     ];
     return (
         <>
-            <div className="row pb-3" style={{ borderBottom: '2px solid gainsboro' }}>
+            <div className="row pb-3" style={{ borderBottom: '1px solid gainsboro' }}>
                 <div className="col">
                     <div className="float-end">
                         <button type="button" className="btn btn-outline-secondary btn-sm me-1">

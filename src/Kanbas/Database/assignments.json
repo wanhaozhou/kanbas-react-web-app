@@ -1,0 +1,122 @@
+[
+    {
+        "_id": "A101",
+        "title": "Propulsion Assignment",
+        "course": "RS101"
+    },
+    {
+        "_id": "A102",
+        "title": "Combustion Analysis",
+        "course": "RS101"
+    },
+    {
+        "_id": "A103",
+        "title": "Nozzle Design Project",
+        "course": "RS101"
+    },
+    {
+        "_id": "A201",
+        "title": "Aerodynamics Quiz",
+        "course": "RS102"
+    },
+    {
+        "_id": "A202",
+        "title": "Flow Analysis",
+        "course": "RS102"
+    },
+    {
+        "_id": "A203",
+        "title": "Heating Analysis",
+        "course": "RS102"
+    },
+    {
+        "_id": "A301",
+        "title": "Structural Design Task",
+        "course": "RS103"
+    },
+    {
+        "_id": "A302",
+        "title": "Orbital Calculations",
+        "course": "RS103"
+    },
+    {
+        "_id": "A303",
+        "title": "Systems Engineering Exam",
+        "course": "RS103"
+    },
+    {
+        "_id": "A401",
+        "title": "CS101 A1",
+        "course": "CS101"
+    },
+    {
+        "_id": "A402",
+        "title": "CS101 A2",
+        "course": "CS101"
+    },
+    {
+        "_id": "A403",
+        "title": "CS101 A3",
+        "course": "CS101"
+    },
+    {
+        "_id": "A501",
+        "title": "CS102 A1",
+        "course": "CS102"
+    },
+    {
+        "_id": "A502",
+        "title": "CS102 A2",
+        "course": "CS102"
+    },
+    {
+        "_id": "A503",
+        "title": "CS102 A3",
+        "course": "CS102"
+    },
+    {
+        "_id": "A601",
+        "title": "CS103 A1",
+        "course": "CS103"
+    },
+    {
+        "_id": "A602",
+        "title": "CS103 A2",
+        "course": "CS103"
+    },
+    {
+        "_id": "A603",
+        "title": "CS103 A3",
+        "course": "CS103"
+    },
+    {
+        "_id": "A701",
+        "title": "CS104 A1",
+        "course": "CS104"
+    },
+    {
+        "_id": "A702",
+        "title": "CS104 A2",
+        "course": "CS104"
+    },
+    {
+        "_id": "A703",
+        "title": "CS104 A3",
+        "course": "CS104"
+    },
+    {
+        "_id": "A801",
+        "title": "CS105 A1",
+        "course": "CS105"
+    },
+    {
+        "_id": "A802",
+        "title": "CS105 A2",
+        "course": "CS105"
+    },
+    {
+        "_id": "A803",
+        "title": "CS105 A3",
+        "course": "CS105"
+    }
+]
