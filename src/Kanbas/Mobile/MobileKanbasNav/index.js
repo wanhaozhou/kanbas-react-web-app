@@ -26,7 +26,7 @@ const MobileKanbasNav = ({ turnOff }) => {
         <ul className='list-group'>
             <li className='list-group-item border-0'>
                 <span className='float-end'>
-                    <FaTimes onClick={turnOff} />
+                    <FaTimes onClick={() => turnOff()} />
                 </span>
             </li>
             {items.map(

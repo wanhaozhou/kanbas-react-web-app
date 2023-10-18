@@ -191,7 +191,7 @@ function AssignmentEditor() {
                             className="btn btn-outline-secondary">
                             Cancel
                         </Link>
-                        <button onClick={handleSave} className="btn btn-danger ms-2">
+                        <button onClick={() => handleSave()} className="btn btn-danger ms-2">
                             Save
                         </button>
                     </span>

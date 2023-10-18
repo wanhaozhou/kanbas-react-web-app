@@ -4,7 +4,7 @@ const Mobile = ({ courseId, courseName, turnOnKanbas, turnOnCourse, mobileCourse
     return (
         <div className='row text-white'>
             <div className='col'>
-                <FaBars onClick={turnOnKanbas} />
+                <FaBars onClick={() => turnOnKanbas()} />
             </div>
             <div className='col'>
                 <p className='text-center'>{`${courseId} ${courseName} Modules`}</p>
@@ -14,7 +14,7 @@ const Mobile = ({ courseId, courseName, turnOnKanbas, turnOnCourse, mobileCourse
                     <span className='me-2'>
                         <FaGlasses />
                     </span>
-                    {mobileCourseNav ? <FaTimes onClick={turnOffCourse} /> : <FaChevronDown onClick={turnOnCourse} />}
+                    {mobileCourseNav ? <FaTimes onClick={() => turnOffCourse()} /> : <FaChevronDown onClick={() => turnOnCourse()} />}
                 </span>
             </div>
         </div>
