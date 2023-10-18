@@ -1,6 +1,6 @@
-import { FaBars, FaGlasses, FaChevronDown } from 'react-icons/fa';
+import { FaBars, FaGlasses, FaChevronDown, FaTimes } from 'react-icons/fa';
 
-const Mobile = ({ courseId, courseName, turnOnKanbas, turnOnCourse }) => {
+const Mobile = ({ courseId, courseName, turnOnKanbas, turnOnCourse, mobileCourseNav, turnOffCourse }) => {
     return (
         <div className="row text-white">
             <div className="col">
@@ -14,7 +14,7 @@ const Mobile = ({ courseId, courseName, turnOnKanbas, turnOnCourse }) => {
                     <span className='me-2'>
                         <FaGlasses />
                     </span>
-                    <FaChevronDown onClick={turnOnCourse} />
+                    {mobileCourseNav ? <FaTimes onClick={turnOffCourse} /> : <FaChevronDown onClick={turnOnCourse} />}
                 </span>
             </div>
         </div>

@@ -26,19 +26,17 @@ const Courses = () => {
 
     const [mobileKanbasNav, setMobileKanbasNav] = useState(false);
     const turnOnMobileKanbasNav = () => {
+        setMobileCourseNav(false);
         setMobileKanbasNav(true);
     }
-    const turnOffMobileKanbasNav = () => {
-        setMobileKanbasNav(false);
-    }
+    const turnOffMobileKanbasNav = () => setMobileKanbasNav(false);
 
     const [mobileCourseNav, setMobileCourseNav] = useState(false);
     const turnOnMobileCourseNav = () => {
+        setMobileKanbasNav(false);
         setMobileCourseNav(true);
     }
-    const turnOffMobileCourseNav = () => {
-        setMobileCourseNav(false);
-    }
+    const turnOffMobileCourseNav = () => setMobileCourseNav(false);
 
     const bootstrapMd = 768;
     const { width } = useWindowSize();
@@ -91,13 +89,15 @@ const Courses = () => {
             </div>
 
             {/* small screen */}
-            {!mobileKanbasNav && !mobileCourseNav &&
+            {!mobileKanbasNav &&
                 <div className='d-block d-md-none mt-2 mb-3 ps-2 pe-2 pt-2 pb-1 bg-black'>
                     <Mobile
                         courseId={course._id}
                         courseName={course.name}
                         turnOnKanbas={turnOnMobileKanbasNav}
                         turnOnCourse={turnOnMobileCourseNav}
+                        mobileCourseNav={mobileCourseNav}
+                        turnOffCourse={turnOffMobileCourseNav}
                     />
                 </div>
             }
@@ -106,8 +106,8 @@ const Courses = () => {
                 <MobileKanbasNav turnOff={turnOffMobileKanbasNav} />
             }
 
-            {mobileCourseNav && width < bootstrapMd &&
-                <MobileCourseNav turnOff={turnOffMobileCourseNav} />
+            {mobileCourseNav && !mobileKanbasNav && width < bootstrapMd &&
+                <MobileCourseNav />
             }
 
             {((width < bootstrapMd && !mobileCourseNav && !mobileKanbasNav) || (width >= bootstrapMd)) &&
