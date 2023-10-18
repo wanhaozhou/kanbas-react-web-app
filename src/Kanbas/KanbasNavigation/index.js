@@ -34,7 +34,7 @@ const KanbasNavigation = () => {
                 </div>
             </li>
             <li className={`wd-kb-nav-li ${accountActive ? 'wd-kb-nav-li-active' : ''}`}>
-                <Link to='#'>
+                <Link to='Account'>
                     <div>
                         <IconContext.Provider value={accountActive ? accountActiveLogo : accountInactiveLogo}>
                             <PiUserCircleFill />
@@ -49,7 +49,9 @@ const KanbasNavigation = () => {
             (<li className={`wd-kb-nav-li ${pathname.includes(item[0]) ? 'wd-kb-nav-li-active' : ''}`} key={index}>
                 <Link to={item[0] === 'Courses' ? '#' : item[0]}>
                     <div>
-                        <IconContext.Provider value={redLogo}>{item[1]}</IconContext.Provider>
+                        <IconContext.Provider value={redLogo}>
+                            {item[1]}
+                        </IconContext.Provider>
                     </div>
                     <div>
                         {item[0]}

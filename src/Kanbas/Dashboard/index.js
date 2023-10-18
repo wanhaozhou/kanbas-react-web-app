@@ -28,7 +28,12 @@ const Dashboard = () => {
                             </div>
                             <img className='card-img-top' src='/logo1024.png' alt='React'></img>
                             <div className='card-body'>
-                                <Link key={item._id} to={`/Kanbas/Courses/${item._id}`} className='list-group-item card-title' style={{ color: 'rgb(23, 112, 171)' }}>
+                                <Link
+                                    key={item._id}
+                                    to={`/Kanbas/Courses/${item._id}`}
+                                    className='list-group-item card-title'
+                                    style={{ color: 'rgb(23, 112, 171)' }}
+                                >
                                     {item.name}
                                 </Link>
                                 <p className='card-subtitle'>
