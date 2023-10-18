@@ -31,9 +31,6 @@ const ModuleList = () => {
                         <button type="button" className="btn btn-outline-secondary btn-sm me-1">
                             View Progress
                         </button>
-                        <button type="button" className="btn btn-danger btn-sm me-1">
-                            Module
-                        </button>
                         <span className="dropdown me-1">
                             <button className="btn btn-outline-secondary dropdown-toggle btn-sm"
                                 type="button"
@@ -48,6 +45,9 @@ const ModuleList = () => {
                                 <li className="dropdown-item">Option 2</li>
                             </ul>
                         </span>
+                        <button type="button" className="btn btn-danger btn-sm me-1">
+                            Module
+                        </button>
                         <button type="button" className="btn btn-outline-secondary btn-sm me-1">
                             <FaEllipsisV />
                         </button>
