@@ -23,16 +23,16 @@ const MobileKanbasNav = ({ turnOff }) => {
     ];
 
     return (
-        <ul className="list-group">
-            <li className="list-group-item border-0">
-                <span className="float-end">
+        <ul className='list-group'>
+            <li className='list-group-item border-0'>
+                <span className='float-end'>
                     <FaTimes onClick={turnOff} />
                 </span>
             </li>
             {items.map(
                 (it, index) => (
                     it.length === 2 ?
-                        (<li key={index} className="list-group-item border-0">
+                        (<li key={index} className='list-group-item border-0'>
                             <span className='wd-red'>
                                 <span className='me-2'>
                                     <IconContext.Provider value={{ size: 22 }}>
@@ -43,7 +43,7 @@ const MobileKanbasNav = ({ turnOff }) => {
                             </span>
                         </li>
                         ) :
-                        (<li key={index} className="list-group-item border-0">
+                        (<li key={index} className='list-group-item border-0'>
                             <span className={`ms-3 wd-red`}>
                                 <span className={`me-2 ${it[0] === 'Account' ? 'wd-gray' : ''}`}>
                                     <IconContext.Provider value={{ size: 22 }}>

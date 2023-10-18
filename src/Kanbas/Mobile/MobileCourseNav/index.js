@@ -34,9 +34,9 @@ const MobileCourseNav = () => {
     ];
 
     return (
-        <ul className="list-group">
+        <ul className='list-group'>
             {items.map((it, index) => (
-                <li key={index} className="list-group-item border-0">
+                <li key={index} className='list-group-item border-0'>
                     <span className='wd-red'>
                         <span className='me-2'>
                             <IconContext.Provider value={{ size: 22 }}>

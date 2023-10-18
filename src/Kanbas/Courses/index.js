@@ -6,9 +6,9 @@ import { useWindowSize } from 'usehooks-ts';
 
 import { courses } from '../../Kanbas/Database';
 import CourseNavigation from './CourseNavigation';
-import Modules from "./Modules";
+import Modules from './Modules';
 import Home from './Home';
-import Assignments from "./Assignments";
+import Assignments from './Assignments';
 import AssignmentEditor from './Assignments/AssignmentEditor';
 import Grades from './Grades';
 import Mobile from '../Mobile';

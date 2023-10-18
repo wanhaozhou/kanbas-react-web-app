@@ -29,15 +29,15 @@ const Status = () => {
     return (
         <>
             <h4>Course Status</h4>
-            <div className="row mb-2">
+            <div className='row mb-2'>
                 <span>
-                    <button type="button" className="btn btn-outline-secondary btn-sm me-2">
+                    <button type='button' className='btn btn-outline-secondary btn-sm me-2'>
                         <span className='me-1'>
                             <FaBan />
                         </span>
                         Unpublish
                     </button>
-                    <button type="button" className="btn btn-success btn-sm">
+                    <button type='button' className='btn btn-success btn-sm'>
                         <span className='me-1'>
                             <FaCheckCircle />
                         </span>
@@ -46,9 +46,9 @@ const Status = () => {
                 </span>
             </div>
 
-            <div className="list-group mb-3 wd-no-radius">
+            <div className='list-group mb-3 wd-no-radius'>
                 {options.map((item, index) => (
-                    <div key={index} className="list-group-item list-group-item-action list-group-item-secondary mb-1">
+                    <div key={index} className='list-group-item list-group-item-action list-group-item-secondary mb-1'>
                         <span className='me-2'>
                             {item[0]}
                         </span>
@@ -57,17 +57,17 @@ const Status = () => {
                 ))}
             </div>
 
-            <div className="row mb-2" style={{ borderBottom: '1px solid gainsboro' }}>
+            <div className='row mb-2' style={{ borderBottom: '1px solid gainsboro' }}>
                 <h5 className='p-0'>Todo</h5>
             </div>
             <div>
                 <Item title='Grade A1' detail='100 points. Sep 18' />
             </div>
 
-            <div className="row mb-2" style={{ borderBottom: '1px solid gainsboro' }}>
+            <div className='row mb-2' style={{ borderBottom: '1px solid gainsboro' }}>
                 <span className='p-0'>
                     <h5 className='p-0' style={{ display: 'inline' }}>Coming up</h5>
-                    <span className="float-end">
+                    <span className='float-end'>
                         <small>
                             <FaCalendarAlt />
                             View Calendar
