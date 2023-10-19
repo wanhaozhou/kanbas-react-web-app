@@ -37,12 +37,11 @@ const Dashboard = () => {
                                     {item.name}
                                 </Link>
                                 <p className='card-subtitle'>
-                                    {item.number}
+                                    {item._id}
                                 </p>
                                 <p className='card-text'>
                                     <small>{item.startDate} - {item.endDate}</small>
                                 </p>
-                                {/* TODO Link? */}
                                 <IconContext.Provider value={{ color: 'crimson', size: 20 }}>
                                     <FaRegEdit />
                                 </IconContext.Provider>

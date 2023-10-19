@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons';
 import { useState } from 'react';
 import { useWindowSize } from 'usehooks-ts';
 
-import { courses } from '../../Kanbas/Database';
+import { courses, assignments } from '../../Kanbas/Database';
 import CourseNavigation from './CourseNavigation';
 import Modules from './Modules';
 import Home from './Home';
@@ -41,6 +41,8 @@ const Courses = () => {
     const bootstrapMd = 768;
     const { width } = useWindowSize();
 
+    const assignmentName = assignmentEdit ? assignments.filter(item => item._id === locations.at(-1))[0]?.title : '';
+
     return (
         <>
             {/* large screen */}
@@ -70,7 +72,7 @@ const Courses = () => {
                                     </li> :
                                     <></>
                                 }
-                                <li className='breadcrumb-item active' aria-current='page'>{decodeURI(locations.at(-1))}</li>
+                                <li className='breadcrumb-item active' aria-current='page'>{decodeURI(locations.at(-1)) + ' ' + assignmentName}</li>
                             </ol>
                         </nav>
                     </div>

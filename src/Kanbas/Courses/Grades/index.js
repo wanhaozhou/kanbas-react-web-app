@@ -89,7 +89,7 @@ const Grades = () => {
             <div className='row mt-3'>
                 <div className='col mt-3'>
                     <div className='table-responsive'>
-                        <table className='table table-striped'>
+                        <table className='table table-striped  table-bordered'>
                             <thead className='table-light text-center'>
                                 <tr>
                                     <th className='text-start'>Student Name</th>
