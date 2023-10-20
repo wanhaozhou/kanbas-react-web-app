@@ -13,7 +13,6 @@ const Assignments = () => {
     const courseAssignments = assignments.filter((assignment) => assignment.course === courseId);
     return (
         <div className='col-12 col-md-9 col-xxl-10'>
-            {/* style='border-bottom: 2px solid gainsboro;' */}
             <div className='row pb-3' style={{ borderBottom: '1px solid gainsboro' }}>
                 <input className='form-control w-25' type='text' placeholder='Search for Assignments' />
                 <div className='col'>
