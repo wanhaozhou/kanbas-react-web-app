@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons';
 import { useState } from 'react';
 import { useWindowSize } from 'usehooks-ts';
 
-import { courses, assignments } from '../../Kanbas/Database';
+import { assignments } from '../../Kanbas/Database';
 import CourseNavigation from './CourseNavigation';
 import Modules from './Modules';
 import Home from './Home';
@@ -16,9 +16,9 @@ import MobileCourseNav from '../Mobile/MobileCourseNav';
 import MobileKanbasNav from '../Mobile/MobileKanbasNav';
 
 
-const Courses = () => {
+const Courses = ({ courses }) => {
     const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
+    const course = courses.find((course) => course._id === courseId || course._id === parseInt(courseId));
 
     const location = useLocation();
     const locations = location.pathname.split('/');
@@ -58,10 +58,10 @@ const Courses = () => {
                                         </IconContext.Provider>
                                     </span>
                                     <span className='wd-red me-2' >
-                                        {course._id}
+                                        {course?._id}
                                     </span>
                                     <span className='wd-red' >
-                                        {course.name}
+                                        {course?.name}
                                     </span>
                                 </li>
                                 {assignmentEdit ?
@@ -94,8 +94,8 @@ const Courses = () => {
             {!mobileKanbasNav &&
                 <div className='d-block d-md-none mt-2 mb-3 ps-2 pe-2 pt-2 pb-1 bg-black'>
                     <Mobile
-                        courseId={course._id}
-                        courseName={course.name}
+                        courseId={course?._id}
+                        courseName={course?.name}
                         turnOnKanbas={turnOnMobileKanbasNav}
                         turnOnCourse={turnOnMobileCourseNav}
                         mobileCourseNav={mobileCourseNav}
