@@ -41,7 +41,7 @@ const Courses = ({ courses }) => {
     const bootstrapMd = 768;
     const { width } = useWindowSize();
 
-    const assignmentName = assignmentEdit ? assignments.filter(item => item._id === locations.at(-1))[0]?.title : '';
+    const assignmentName = assignmentEdit ? assignments.filter(item => item._id === locations.at(-1))[0]?.title || 'New assignment' : '';
 
     return (
         <>
@@ -72,7 +72,9 @@ const Courses = ({ courses }) => {
                                     </li> :
                                     <></>
                                 }
-                                <li className='breadcrumb-item active' aria-current='page'>{decodeURI(locations.at(-1)) + ' ' + assignmentName}</li>
+                                <li className='breadcrumb-item active' aria-current='page'>{
+                                    decodeURI(locations.at(-1)) === 'new' ? 'New assignment' : (decodeURI(locations.at(-1)) + ' ' + assignmentName)
+                                }</li>
                             </ol>
                         </nav>
                     </div>

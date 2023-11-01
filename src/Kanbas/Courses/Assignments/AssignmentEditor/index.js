@@ -1,17 +1,24 @@
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { FaCheckCircle, FaEllipsisV } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import { useSelector, useDispatch } from "react-redux";
 
-import { assignments } from "../../../Database";
+import { addAssignment, updateAssignment, selectAssignment } from "../assignmentsReducer";
 
 function AssignmentEditor() {
     const { assignmentId } = useParams();
-    const assignment = assignments.find((assignment) => assignment._id === assignmentId);
+
+    const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+    const dispatch = useDispatch();
 
     const { courseId } = useParams();
     const navigate = useNavigate();
     const handleSave = () => {
-        console.log(`saving assignment id ${assignmentId} of course ${courseId}`);
+        if (assignmentId === 'new') {
+            dispatch(addAssignment({ ...assignment, course: courseId, }));
+        } else {
+            dispatch(updateAssignment(assignment))
+        }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
 
@@ -43,8 +50,11 @@ function AssignmentEditor() {
                 </div>
                 <div className="row">
                     <div className="col-12 col-lg-10">
-                        <input defaultValue={assignment.title}
-                            className="form-control mb-2" id="assignment-name" />
+                        <input
+                            value={assignment.title}
+                            className="form-control mb-2" id="assignment-name"
+                            onChange={(e) => dispatch(selectAssignment({ ...assignment, title: e.target.value }))}
+                        />
                     </div>
                 </div>
                 <div className="row my-3">
@@ -54,21 +64,12 @@ function AssignmentEditor() {
                             placeholder="This is the assignment description."
                             id="assignment-description"
                             style={{ height: '100px' }}
-                            value='
-                            New Assignment Description
-                            '
+                            value={assignment.description}
+                            onChange={(e) => dispatch(selectAssignment({ ...assignment, description: e.target.value }))}
                         />
                     </div>
                 </div>
                 <form>
-                    <div className="row mb-3">
-                        <div className="col-3 text-end">
-                            <label htmlFor="assignment-points" className="col-form-label">Points</label>
-                        </div>
-                        <div className="col-8 col-lg-6">
-                            <input type="number" className="form-control" id="assignment-points" defaultValue="100" />
-                        </div>
-                    </div>
                     <div className="row mb-3">
                         <div className="col-3 text-end">
                             <label htmlFor="assignment-assign" className="col-form-label">Assign</label>
@@ -76,15 +77,30 @@ function AssignmentEditor() {
                         <div className="ms-2 col-8 col-lg-6 border wd-border-light-gray rounded p-0">
                             <div className="px-3">
                                 <h5 className="my-3">Due</h5>
-                                <input className="form-control" type="date" defaultValue="2021-01-01" />
+                                <input
+                                    className="form-control"
+                                    type="date"
+                                    value={assignment.dueDate}
+                                    onChange={(e) => dispatch(selectAssignment({ ...assignment, dueDate: e.target.value }))}
+                                />
                                 <div className="row my-3">
                                     <div className="col">
                                         <h5 className="my-2">Available from</h5>
-                                        <input className="form-control" type="date" defaultValue="2021-01-01" />
+                                        <input
+                                            className="form-control"
+                                            type="date"
+                                            value={assignment.availableFromDate}
+                                            onChange={(e) => dispatch(selectAssignment({ ...assignment, availableFromDate: e.target.value }))}
+                                        />
                                     </div>
                                     <div className="col">
                                         <h5 className="my-2">Until</h5>
-                                        <input className="form-control" type="date" defaultValue="2021-01-01" />
+                                        <input
+                                            className="form-control"
+                                            type="date"
+                                            value={assignment.availableUntilDate}
+                                            onChange={(e) => dispatch(selectAssignment({ ...assignment, availableUntilDate: e.target.value }))}
+                                        />
                                     </div>
                                 </div>
                             </div>
