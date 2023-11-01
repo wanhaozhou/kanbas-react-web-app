@@ -1,11 +1,13 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from "react";
+import { Provider } from "react-redux";
 
 
 import Dashboard from './Dashboard';
 import Courses from './Courses';
 import KanbasNavigation from './KanbasNavigation';
 import { courses as dbCourses } from './Database';
+import store from "./store";
 
 import './index.css';
 
@@ -43,28 +45,30 @@ const Kanbas = () => {
     };
 
     return (
-        <div className='wd-root-container'>
-            <div className='d-none d-md-block'>
-                <KanbasNavigation />
+        <Provider store={store}>
+            <div className='wd-root-container'>
+                <div className='d-none d-md-block'>
+                    <KanbasNavigation />
+                </div>
+                <div className='container-fluid ms-3 me-1' style={{ minWidth: '0%' }}>
+                    <Routes>
+                        <Route path='/' element={<Navigate to='Dashboard' />} />
+                        <Route path='Account' element={<h1>Account</h1>} />
+                        <Route path='Dashboard' element={
+                            <Dashboard
+                                courses={courses}
+                                course={course}
+                                setCourse={setCourse}
+                                addNewCourse={addNewCourse}
+                                deleteCourse={deleteCourse}
+                                updateCourse={updateCourse}
+                            />
+                        } />
+                        <Route path='Courses/:courseId/*' element={<Courses courses={courses} />} />
+                    </Routes>
+                </div>
             </div>
-            <div className='container-fluid ms-3 me-1' style={{ minWidth: '0%' }}>
-                <Routes>
-                    <Route path='/' element={<Navigate to='Dashboard' />} />
-                    <Route path='Account' element={<h1>Account</h1>} />
-                    <Route path='Dashboard' element={
-                        <Dashboard
-                            courses={courses}
-                            course={course}
-                            setCourse={setCourse}
-                            addNewCourse={addNewCourse}
-                            deleteCourse={deleteCourse}
-                            updateCourse={updateCourse}
-                        />
-                    } />
-                    <Route path='Courses/:courseId/*' element={<Courses courses={courses} />} />
-                </Routes>
-            </div>
-        </div>
+        </Provider>
     );
 }
 

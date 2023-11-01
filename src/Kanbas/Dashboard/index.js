@@ -17,18 +17,50 @@ const Dashboard = ({
             </div>
             <div className='row mt-2 mb-2'>
                 <h5>Course</h5>
-                <input value={course.name} className="form-control" onChange={(e) => setCourse({ ...course, name: e.target.value })} />
-                <input value={course.number} className="form-control" onChange={(e) => setCourse({ ...course, number: e.target.value })} />
-                <input value={course.startDate} className="form-control" type="date" onChange={(e) => setCourse({ ...course, startDate: e.target.value })} />
-                <input value={course.endDate} className="form-control" type="date" onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
-                <span>
-                    <button className="btn btn-success me-2" onClick={addNewCourse} >
-                        Add
-                    </button>
-                    <button className="btn btn-primary" onClick={updateCourse} >
-                        Update
-                    </button>
-                </span>
+                <form>
+                    <div className="row mb-3">
+                        <div className="col-3">
+                            <label htmlFor="course-name" className="col-form-label">Course Name</label>
+                        </div>
+                        <div className="col-6">
+                            <input value={course.name} className="form-control" onChange={(e) => setCourse({ ...course, name: e.target.value })} />
+                        </div>
+                        <div className="col-3">
+                            <button className="btn btn-success me-2" onClick={addNewCourse} >
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <div className="col-3">
+                            <label htmlFor="course-number" className="col-form-label">Course Number</label>
+                        </div>
+                        <div className="col-6">
+                            <input value={course.number} className="form-control" onChange={(e) => setCourse({ ...course, number: e.target.value })} />
+                        </div>
+                        <div className="col-3">
+                            <button className="btn btn-primary" onClick={updateCourse} >
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <div className="col-3">
+                            <label htmlFor="course-number" className="col-form-label">Start Date</label>
+                        </div>
+                        <div className="col-6">
+                            <input value={course.startDate} className="form-control" type="date" onChange={(e) => setCourse({ ...course, startDate: e.target.value })} />
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <div className="col-3">
+                            <label htmlFor="course-number" className="col-form-label">Start Date</label>
+                        </div>
+                        <div className="col-6">
+                            <input value={course.endDate} className="form-control" type="date" onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
+                        </div>
+                    </div>
+                </form>
 
             </div>
             <div className='row mt-2'>
