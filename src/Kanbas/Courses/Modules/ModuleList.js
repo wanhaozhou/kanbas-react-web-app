@@ -62,7 +62,7 @@ const ModuleList = () => {
                             />
                         </div>
                         <div className="col-3">
-                            <button className="btn btn-success me-2" onClick={() => dispatch(addModule({ ...module, course: courseId }))} >
+                            <button className="btn btn-success me-2" onClick={(e) => { e.preventDefault(); dispatch(addModule({ ...module, course: courseId })) }} >
                                 Add
                             </button>
                         </div>
@@ -80,7 +80,7 @@ const ModuleList = () => {
                             />
                         </div>
                         <div className="col-3">
-                            <button className="btn btn-primary me-2" onClick={() => dispatch(updateModule(module))}>
+                            <button className="btn btn-primary me-2" onClick={(e) => { e.preventDefault(); dispatch(updateModule(module)) }}>
                                 Update
                             </button>
                         </div>
@@ -102,11 +102,11 @@ const ModuleList = () => {
                                     {m.name}
                                     <span className='float-end'>
                                         <button className="btn btn-danger btn-sm me-2"
-                                            onClick={() => dispatch(deleteModule(m._id))}>
+                                            onClick={(e) => { e.preventDefault(); dispatch(deleteModule(m._id)) }}>
                                             Delete
                                         </button>
                                         <button className="btn btn-success btn-sm me-2"
-                                            onClick={() => dispatch(setModule(m))}>
+                                            onClick={(e) => { e.preventDefault(); dispatch(setModule(m)) }}>
                                             Edit
                                         </button>
                                         <span className='me-2'>

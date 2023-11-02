@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { modules } from "../../Database";
 
-const defaultModule = { name: "New module using redux", description: "New description using redux" };
+const defaultModule = { name: "New module", description: "New description" };
 const initialState = {
     modules: modules,
     module: defaultModule,
@@ -16,7 +16,6 @@ const modulesSlice = createSlice({
                 { ...action.payload, _id: new Date().getTime().toString() },
                 ...state.modules,
             ];
-            state.module = { ...defaultModule };
         },
         updateModule: (state, action) => {
             state.modules = state.modules.map((module) => {
@@ -26,7 +25,6 @@ const modulesSlice = createSlice({
                     return module;
                 }
             });
-            state.module = { ...defaultModule };
         },
         deleteModule: (state, action) => {
             state.modules = state.modules.filter(

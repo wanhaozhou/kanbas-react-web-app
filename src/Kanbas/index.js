@@ -33,15 +33,7 @@ const Kanbas = () => {
         setCourses(courses.filter((course) => course._id !== courseId));
     };
     const updateCourse = () => {
-        setCourses(
-            courses.map((c) => {
-                if (c._id === course._id) {
-                    return course;
-                } else {
-                    return c;
-                }
-            })
-        );
+        setCourses(courses.map((c) => c._id === course._id ? course : c));
     };
 
     return (

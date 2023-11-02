@@ -26,7 +26,7 @@ const Dashboard = ({
                             <input value={course.name} className="form-control" onChange={(e) => setCourse({ ...course, name: e.target.value })} />
                         </div>
                         <div className="col-3">
-                            <button className="btn btn-success me-2" onClick={addNewCourse} >
+                            <button className="btn btn-success me-2" onClick={(e) => { e.preventDefault(); addNewCourse(); }} >
                                 Add
                             </button>
                         </div>
@@ -36,10 +36,10 @@ const Dashboard = ({
                             <label htmlFor="course-number" className="col-form-label">Course Number</label>
                         </div>
                         <div className="col-6">
-                            <input value={course.number} className="form-control" onChange={(e) => setCourse({ ...course, number: e.target.value })} />
+                            <input value={course.number} className="form-control" onChange={(e) => { setCourse({ ...course, number: e.target.value }); }} />
                         </div>
                         <div className="col-3">
-                            <button className="btn btn-primary" onClick={updateCourse} >
+                            <button className="btn btn-primary" onClick={(e) => { e.preventDefault(); updateCourse(); }} >
                                 Update
                             </button>
                         </div>
@@ -99,15 +99,15 @@ const Dashboard = ({
                                 </IconContext.Provider>
                                 <span className='float-end'>
                                     <button className='btn btn-warning btn-sm me-2'
-                                        onClick={(event) => {
-                                            event.preventDefault();
+                                        onClick={(e) => {
+                                            e.preventDefault();
                                             setCourse(item);
                                         }}>
                                         Edit
                                     </button>
                                     <button className='btn btn-danger btn-sm'
-                                        onClick={(event) => {
-                                            event.preventDefault();
+                                        onClick={(e) => {
+                                            e.preventDefault();
                                             deleteCourse(item._id);
                                         }}>
                                         Delete
