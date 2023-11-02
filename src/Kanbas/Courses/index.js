@@ -3,8 +3,8 @@ import { FaBars, FaGlasses } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import { useState } from 'react';
 import { useWindowSize } from 'usehooks-ts';
+import { useSelector } from 'react-redux';
 
-import { assignments } from '../../Kanbas/Database';
 import CourseNavigation from './CourseNavigation';
 import Modules from './Modules';
 import Home from './Home';
@@ -41,7 +41,8 @@ const Courses = ({ courses }) => {
     const bootstrapMd = 768;
     const { width } = useWindowSize();
 
-    const assignmentName = assignmentEdit ? assignments.filter(item => item._id === locations.at(-1))[0]?.title || 'New assignment' : '';
+    const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+    const assignmentName = assignmentEdit ? assignments.filter(item => item._id === locations.at(-1))[0]?.title : '';
 
     return (
         <>
