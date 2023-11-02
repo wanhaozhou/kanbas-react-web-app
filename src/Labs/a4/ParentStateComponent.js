@@ -9,7 +9,8 @@ const ParentStateComponent = () => {
             <h2>Counter {counter}</h2>
             <ChildStateComponent
                 counter={counter}
-                setCounter={setCounter} />
+                setCounter={setCounter}
+            />
         </div>
     );
 }

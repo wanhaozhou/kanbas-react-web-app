@@ -11,9 +11,11 @@ function TodoList() {
             <h2>Todo List</h2>
             <ul className="list-group">
                 <TodoForm />
-                {todos.map((todo) => (
+                {todos.map((todo, index) => (
                     <TodoItem
-                        todo={todo} />
+                        key={index}
+                        todo={todo}
+                    />
                 ))}
             </ul>
         </div>
