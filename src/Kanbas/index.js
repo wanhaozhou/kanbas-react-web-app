@@ -8,11 +8,11 @@ import Courses from './Courses';
 import KanbasNavigation from './KanbasNavigation';
 import store from "./store";
 import NotFound from './NotFound';
+import { COURSES_URL } from './Courses/Modules/client';
 
 import './index.css';
 
 const Kanbas = () => {
-    const URL = "http://localhost:4000/api/courses";
 
     const [courses, setCourses] = useState([]);
     const [course, setCourse] = useState({
@@ -23,7 +23,7 @@ const Kanbas = () => {
     });
 
     const findAllCourses = async () => {
-        const response = await axios.get(URL);
+        const response = await axios.get(COURSES_URL);
         setCourses(response.data);
     };
     useEffect(() => {
@@ -32,7 +32,7 @@ const Kanbas = () => {
 
     const addNewCourse = async () => {
         try {
-            const response = await axios.post(URL, course);
+            const response = await axios.post(COURSES_URL, course);
             setCourses([
                 response.data,
                 ...courses,
@@ -43,12 +43,12 @@ const Kanbas = () => {
     };
 
     const deleteCourse = async (courseId) => {
-        await axios.delete(`${URL}/${courseId}`);
+        await axios.delete(`${COURSES_URL}/${courseId}`);
         setCourses(courses.filter((c) => c._id !== courseId));
     };
 
     const updateCourse = async () => {
-        await axios.put(`${URL}/${course._id}`, course);
+        await axios.put(`${COURSES_URL}/${course._id}`, course);
         setCourses(courses.map((c) => c._id === course._id ? course : c));
     };
 

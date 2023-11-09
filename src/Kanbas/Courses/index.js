@@ -15,10 +15,10 @@ import Grades from './Grades';
 import Mobile from '../Mobile';
 import MobileCourseNav from '../Mobile/MobileCourseNav';
 import MobileKanbasNav from '../Mobile/MobileKanbasNav';
+import { COURSES_URL } from './Modules/client';
 
 
 const Courses = ({ courses }) => {
-    const URL = "http://localhost:4000/api/courses";
     const navigate = useNavigate();
 
     const { courseId } = useParams();
@@ -28,7 +28,7 @@ const Courses = ({ courses }) => {
         const findCourseById = async (courseId) => {
             try {
                 const response = await axios.get(
-                    `${URL}/${courseId}`
+                    `${COURSES_URL}/${courseId}`
                 );
                 setCourse(response.data);
             } catch (error) {
