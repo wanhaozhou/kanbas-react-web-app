@@ -1,17 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { FaCheckCircle, FaEllipsisV, FaGripVertical, FaPlus } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import { useSelector, useDispatch } from "react-redux";
 
-import { addModule, deleteModule, updateModule, setModule } from "./modulesReducer";
+import { addModule, deleteModule, updateModule, setModule, setModules } from "./modulesReducer";
+import * as client from "./client";
 
 
 const ModuleList = () => {
+    const dispatch = useDispatch();
     const { courseId } = useParams();
+
+    useEffect(() => {
+        client.findModulesForCourse(courseId)
+            .then((modules) => dispatch(setModules(modules)));
+    }, [courseId, dispatch]);
+
     const modules = useSelector((state) => state.modulesReducer.modules);
     const module = useSelector((state) => state.modulesReducer.module);
-    const dispatch = useDispatch();
+
+    const handleAddModule = () => {
+        client.createModule(courseId, module).then((module) => {
+            dispatch(addModule(module));
+        });
+    };
+    const handleDeleteModule = (moduleId) => {
+        client.deleteModule(moduleId).then((status) => { dispatch(deleteModule(moduleId)) });
+    };
+    const handleUpdateModule = async () => {
+        await client.updateModule(module);
+        dispatch(updateModule(module));
+    };
+
 
     return (
         <>
@@ -62,7 +83,12 @@ const ModuleList = () => {
                             />
                         </div>
                         <div className="col-3">
-                            <button className="btn btn-success me-2" onClick={(e) => { e.preventDefault(); dispatch(addModule({ ...module, course: courseId })) }} >
+                            <button className="btn btn-success me-2" onClick={
+                                (e) => {
+                                    e.preventDefault();
+                                    handleAddModule();
+                                }
+                            } >
                                 Add
                             </button>
                         </div>
@@ -80,7 +106,10 @@ const ModuleList = () => {
                             />
                         </div>
                         <div className="col-3">
-                            <button className="btn btn-primary me-2" onClick={(e) => { e.preventDefault(); dispatch(updateModule(module)) }}>
+                            <button className="btn btn-primary me-2" onClick={(e) => {
+                                e.preventDefault();
+                                handleUpdateModule();
+                            }}>
                                 Update
                             </button>
                         </div>
@@ -102,7 +131,10 @@ const ModuleList = () => {
                                     {m.name}
                                     <span className='float-end'>
                                         <button className="btn btn-danger btn-sm me-2"
-                                            onClick={(e) => { e.preventDefault(); dispatch(deleteModule(m._id)) }}>
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                handleDeleteModule(m._id)
+                                            }}>
                                             Delete
                                         </button>
                                         <button className="btn btn-success btn-sm me-2"

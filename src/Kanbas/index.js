@@ -1,18 +1,20 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Provider } from "react-redux";
-
+import axios from "axios";
 
 import Dashboard from './Dashboard';
 import Courses from './Courses';
 import KanbasNavigation from './KanbasNavigation';
-import { courses as dbCourses } from './Database';
 import store from "./store";
+import NotFound from './NotFound';
 
 import './index.css';
 
 const Kanbas = () => {
-    const [courses, setCourses] = useState(dbCourses);
+    const URL = "http://localhost:4000/api/courses";
+
+    const [courses, setCourses] = useState([]);
     const [course, setCourse] = useState({
         name: "New Course",
         number: "New Number",
@@ -20,19 +22,33 @@ const Kanbas = () => {
         endDate: "2023-12-15",
     });
 
-    const addNewCourse = () => {
-        setCourses([
-            ...courses,
-            {
-                ...course,
-                _id: new Date().getTime()
-            }
-        ]);
+    const findAllCourses = async () => {
+        const response = await axios.get(URL);
+        setCourses(response.data);
     };
-    const deleteCourse = (courseId) => {
-        setCourses(courses.filter((course) => course._id !== courseId));
+    useEffect(() => {
+        findAllCourses();
+    }, []);
+
+    const addNewCourse = async () => {
+        try {
+            const response = await axios.post(URL, course);
+            setCourses([
+                response.data,
+                ...courses,
+            ]);
+        } catch (error) {
+
+        }
     };
-    const updateCourse = () => {
+
+    const deleteCourse = async (courseId) => {
+        await axios.delete(`${URL}/${courseId}`);
+        setCourses(courses.filter((c) => c._id !== courseId));
+    };
+
+    const updateCourse = async () => {
+        await axios.put(`${URL}/${course._id}`, course);
         setCourses(courses.map((c) => c._id === course._id ? course : c));
     };
 
@@ -45,6 +61,7 @@ const Kanbas = () => {
                 <div className='container-fluid ms-3 me-1' style={{ minWidth: '0%' }}>
                     <Routes>
                         <Route path='/' element={<Navigate to='Dashboard' />} />
+                        <Route path='404' element={<NotFound />} />
                         <Route path='Account' element={<h1>Account</h1>} />
                         <Route path='Dashboard' element={
                             <Dashboard

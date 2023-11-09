@@ -1,9 +1,10 @@
-import { Navigate, Route, Routes, useParams, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { FaBars, FaGlasses } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useWindowSize } from 'usehooks-ts';
 import { useSelector } from 'react-redux';
+import axios from "axios";
 
 import CourseNavigation from './CourseNavigation';
 import Modules from './Modules';
@@ -17,8 +18,25 @@ import MobileKanbasNav from '../Mobile/MobileKanbasNav';
 
 
 const Courses = ({ courses }) => {
+    const URL = "http://localhost:4000/api/courses";
+    const navigate = useNavigate();
+
     const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId || course._id === parseInt(courseId));
+    const [course, setCourse] = useState({});
+
+    useEffect(() => {
+        const findCourseById = async (courseId) => {
+            try {
+                const response = await axios.get(
+                    `${URL}/${courseId}`
+                );
+                setCourse(response.data);
+            } catch (error) {
+                navigate('/Kanbas/404');
+            }
+        };
+        findCourseById(courseId);
+    }, [courseId, navigate]);
 
     const location = useLocation();
     const locations = location.pathname.split('/');
