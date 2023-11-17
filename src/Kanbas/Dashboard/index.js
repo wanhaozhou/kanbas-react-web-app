@@ -91,6 +91,9 @@ const Dashboard = ({
                                 <p className='card-subtitle'>
                                     {item._id}
                                 </p>
+                                <p className='card-subtitle'>
+                                    {item.number}
+                                </p>
                                 <p className='card-text'>
                                     <small>{item.startDate} - {item.endDate}</small>
                                 </p>
