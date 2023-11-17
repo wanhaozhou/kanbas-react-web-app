@@ -89,10 +89,10 @@ const Dashboard = ({
                                     {item.name}
                                 </Link>
                                 <p className='card-subtitle'>
-                                    {item._id}
+                                    ID: {item._id}
                                 </p>
                                 <p className='card-subtitle'>
-                                    {item.number}
+                                    Number: {item.number}
                                 </p>
                                 <p className='card-text'>
                                     <small>{item.startDate} - {item.endDate}</small>
