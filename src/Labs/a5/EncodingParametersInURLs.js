@@ -30,7 +30,7 @@ const EncodingParametersInURLs = () => {
             <h3>Encoding Parameters In URLs</h3>
 
             <h4>Integrating React with APIs</h4>
-            <h5>Fetching Welcome</h5>
+            <h5>3.4.1 Fetching Welcome</h5>
             <h6>{welcome}</h6>
 
             <h4>Calculator</h4>
@@ -43,7 +43,7 @@ const EncodingParametersInURLs = () => {
             <input value={result}
                 className="form-control mb-2" type="number" readOnly
             />
-            <h3>Fetch Result</h3>
+            <h3>3.4.3 Fetch Result</h3>
             <button onClick={() => fetchSum(a, b)}
                 className="btn btn-primary mb-2  w-100" >
                 Fetch Sum of {a} + {b}
@@ -54,7 +54,7 @@ const EncodingParametersInURLs = () => {
             </button>
 
 
-            <h3>Path Parameters</h3>
+            <h3>3.1.1 Path Parameters</h3>
             <a
                 href={`http://localhost:4000/a5/add/${a}/${b}`}
                 className="btn btn-primary">
@@ -66,7 +66,7 @@ const EncodingParametersInURLs = () => {
                 Subtract {a} - {b}
             </a>
 
-            <h3>Query Parameters</h3>
+            <h3>3.1.2 Query Parameters</h3>
             <a
                 href={`http://localhost:4000/a5/calculator?operation=add&a=${a}&b=${b}`}
                 className="btn btn-primary">

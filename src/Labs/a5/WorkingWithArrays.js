@@ -74,11 +74,11 @@ const WorkingWithArrays = () => {
             <h3>Working with Arrays</h3>
             <button onClick={createTodo}
                 className="btn btn-primary mb-2 w-100">
-                Create Todo
+                3.4.7 Create Todo
             </button>
             <button onClick={updateTitle}
                 className="btn btn-success mb-2 w-100">
-                Update Title
+                3.4.9 Update Title
             </button>
             <input
                 value={todo.id}
@@ -122,12 +122,12 @@ const WorkingWithArrays = () => {
             </label>
             <br />
             <button
-                className="btn btn-primary"
+                className="btn btn-warning"
                 onClick={postTodo} >
-                Post Todo
+                3.5.1 Post Todo
             </button>
             <button className="btn btn-primary" onClick={updateTodo}>
-                Update Todo
+                3.5.3 Update Todo
             </button>
             <button className="btn btn-danger" onClick={() => { deleteTodo(todo); deleteTodo(todo); }}>
                 3.5.4 Delete Todo Twice (shows an error message)
@@ -138,6 +138,7 @@ const WorkingWithArrays = () => {
                 </div>
             )}
 
+            <h4>3.4.5 Fetching Arrays</h4>
             <ul className="list-group">
                 {todos.map((todo) => (
                     <li key={todo.id}
@@ -154,29 +155,29 @@ const WorkingWithArrays = () => {
                         <button
                             onClick={() => fetchTodoById(todo.id)}
                             className="btn btn-warning me-2 float-end" >
-                            Edit
+                            3.4.8 Edit
                         </button>
                         <button
                             onClick={() => removeTodo(todo)}
                             className="btn btn-danger float-end" >
-                            Remove (HTTP Get)
+                            3.4.6 Remove (HTTP Get)
                         </button>
                         <button
                             onClick={() => deleteTodo(todo)}
                             className="btn btn-danger float-end ms-2">
-                            Delete (HTTP Delete)
+                            3.5.2 Delete (HTTP Delete)
                         </button>
                     </li>
                 ))}
             </ul>
 
 
-            <h4>Retrieving Arrays</h4>
+            <h4>3.3.1 Retrieving Arrays</h4>
             <a href={API} className="btn btn-primary me-2">
                 Get Todos
             </a>
 
-            <h4>Retrieving an Item from an Array by ID</h4>
+            <h4>3.3.2 Retrieving an Item from an Array by ID</h4>
             <input
                 className="form-control"
                 value={todo.id}
@@ -190,13 +191,13 @@ const WorkingWithArrays = () => {
                 Get Todo by ID
             </a>
 
-            <h3>Filtering Array Items</h3>
+            <h4>3.3.3 Filtering Array Items</h4>
             <a href={`${API}?completed=true`}
                 className="btn btn-primary me-2" >
                 Get Completed Todos
             </a>
 
-            <h4>Creating new Items in an Array</h4>
+            <h4>3.3.4 Creating new Items in an Array</h4>
             <a href={`${API}/create`}
                 className="btn btn-primary me-2">
                 Create Todo
@@ -210,7 +211,7 @@ const WorkingWithArrays = () => {
                 className="form-control mb-2"
                 type="number"
             />
-            <h3>Deleting from an Array</h3>
+            <h4>3.3.5  Deleting from an Array</h4>
             <a href={`${API}/${todo.id}/delete`}
                 className="btn btn-primary me-2">
                 Delete Todo with ID = {todo.id}
@@ -224,16 +225,15 @@ const WorkingWithArrays = () => {
                 className="form-control mb-2"
                 type="text"
             />
-            <h3>Updating an Item in an Array</h3>
+            <h4>3.3.6 Updating an Item in an Array</h4>
             <a
                 href={`${API}/${todo.id}/title/${todo.title}`}
                 className="btn btn-primary me-2" >
                 Update Title to {todo.title}
             </a>
 
-
             <br />
-            <h3>Updating Completed</h3>
+            <h4>3.3.7 Updating Completed</h4>
             <input
                 checked={todo.completed}
                 onChange={(e) => {
@@ -250,7 +250,7 @@ const WorkingWithArrays = () => {
             </a>
 
 
-            <h3>Updating description</h3>
+            <h4>3.3.7 Updating description</h4>
             <input
                 value={todo.description || ''}
                 onChange={(e) => setTodo({
