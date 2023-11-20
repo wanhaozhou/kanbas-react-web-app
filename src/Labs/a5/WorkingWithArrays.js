@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const WorkingWithArrays = () => {
-    const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:4000';
+    let API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:4000';
+    if (API_BASE !== 'http://localhost:4000') {
+        API_BASE = API_BASE.substring(0, API_BASE.length - 4);
+    }
     const API = `${API_BASE}/a5/todos`;
     const [errorMessage, setErrorMessage] = useState(null);
 
