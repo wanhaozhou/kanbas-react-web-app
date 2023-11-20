@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {
     FaPlus, FaEllipsisV,
@@ -9,7 +9,8 @@ import { IconContext } from 'react-icons';
 import { useSelector, useDispatch } from "react-redux";
 import Modal from 'react-bootstrap/Modal';
 
-import { deleteAssignment, selectAssignment } from "./assignmentsReducer";
+import { deleteAssignment, selectAssignment, setAssignments } from "./assignmentsReducer";
+import * as client from './client';
 
 
 const Assignments = () => {
@@ -20,6 +21,21 @@ const Assignments = () => {
 
     const [id, setId] = useState(-1);
     const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        client
+            .findAssignmentsForCourse(courseId)
+            .then((assignments) => dispatch(setAssignments(assignments)))
+    }, [courseId, dispatch]);
+
+    const handleDelete = () => {
+        client
+            .deleteAssignment(id)
+            .then(() => {
+                dispatch(deleteAssignment(id));
+                setShow(false);
+            })
+    }
 
     return (
         <>
@@ -139,7 +155,7 @@ const Assignments = () => {
                     <button className='btn btn-outline-secondary' onClick={() => setShow(false)}>
                         No
                     </button>
-                    <button className='btn btn-danger' onClick={() => { dispatch(deleteAssignment(id)); setShow(false) }}>
+                    <button className='btn btn-danger' onClick={() => { handleDelete() }}>
                         Yes
                     </button>
                 </Modal.Footer>
@@ -147,4 +163,5 @@ const Assignments = () => {
         </>
     );
 }
+
 export default Assignments;

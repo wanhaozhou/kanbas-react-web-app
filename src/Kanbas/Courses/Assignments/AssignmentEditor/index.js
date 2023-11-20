@@ -1,23 +1,43 @@
+import { useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { FaCheckCircle, FaEllipsisV } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { useSelector, useDispatch } from "react-redux";
 
-import { addAssignment, updateAssignment, selectAssignment } from "../assignmentsReducer";
+import { addAssignment, updateAssignment, selectAssignment, setAssignments } from "../assignmentsReducer";
+import * as client from '../client';
 
 function AssignmentEditor() {
     const { assignmentId } = useParams();
-
+    const { courseId } = useParams();
     const assignment = useSelector((state) => state.assignmentsReducer.assignment);
     const dispatch = useDispatch();
-
-    const { courseId } = useParams();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        client
+            .findAssignmentsForCourse(courseId)
+            .then((assignments) => dispatch(setAssignments(assignments)));
+        if (assignmentId !== 'new') {
+            client
+                .findAssignmentById(assignmentId)
+                .then((data) => dispatch(selectAssignment(data)))
+                .catch(() => { navigate("/Kanbas/404") });
+        } else {
+            dispatch(selectAssignment(false));
+        }
+    }, [courseId, assignmentId, dispatch, navigate]);
+
     const handleSave = () => {
         if (assignmentId === 'new') {
-            dispatch(addAssignment({ ...assignment, course: courseId, }));
+            client
+                .createAssignment(courseId, assignment)
+                .then((resp) => dispatch(addAssignment(resp)))
         } else {
-            dispatch(updateAssignment(assignment))
+            client
+                .updateAssignment(assignment)
+                .then(() => dispatch(updateAssignment(assignment)));
+
         }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
