@@ -33,6 +33,15 @@ const Account = () => {
         navigate("/project/signin");
     };
 
+    const parseDate = (date) => {
+        try {
+            const dateString = new Date(date).toISOString().split('T')[0];
+            return dateString;
+        } catch (e) {
+            return '';
+        }
+    }
+
     return (
         <div className="w-50">
             <h1>Account</h1>
@@ -78,7 +87,8 @@ const Account = () => {
                         dob
                         <input
                             className="form-control"
-                            value={account.dob}
+                            value={parseDate(account.dob)}
+                            type="date"
                             onChange={(e) => setAccount({
                                 ...account,
                                 dob: e.target.value
