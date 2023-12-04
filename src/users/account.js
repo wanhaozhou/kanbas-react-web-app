@@ -45,7 +45,6 @@ const Account = () => {
     return (
         <div className="w-50">
             <h1>Account</h1>
-            {!account && <div className="alert alert-danger">Please Signin</div>}
             {account && (
                 <div>
                     <p>Username: {account.username}</p>
