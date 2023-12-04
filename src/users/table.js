@@ -23,8 +23,9 @@ const UserTable = () => {
         try {
             const u = await client.findUserById(user._id);
             setUser(u);
+            setError(null);
         } catch (err) {
-            console.log(err);
+            setError("Cannot find the user");
         }
     };
 
@@ -46,11 +47,11 @@ const UserTable = () => {
         try {
             await client.deleteUser(user);
             setUsers(users.filter((u) => u._id !== user._id));
+            setError(null);
         } catch (err) {
-            console.log(err);
+            setError("Cannot delete the user");
         }
     };
-
 
     const [users, setUsers] = useState([]);
     const fetchUsers = async () => {
@@ -58,10 +59,10 @@ const UserTable = () => {
         setUsers(users);
     };
 
-    useEffect(
-        () => { fetchUsers(); },
-        []
-    );
+    useEffect(() => {
+        fetchUsers();
+    }, []);
+
     return (
         <div>
             <h1>User List</h1>
