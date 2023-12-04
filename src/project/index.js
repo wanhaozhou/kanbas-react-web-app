@@ -8,19 +8,21 @@ import Signup from "../users/signup";
 
 const Project = () => {
     return (
-        <div className="row">
-            <div className="col-2">
-                <ProjectNav />
-            </div>
-            <div className="col-10">
-                <Routes>
-                    <Route path="/" element={<Navigate to="/project/home" />} />
-                    <Route path="signin" element={<Signin />} />
-                    <Route path="signup" element={<Signup />} />
-                    <Route path="account" element={<Account />} />
-                    <Route path="account/:id" element={<Account />} />
-                    <Route path="admin/users" element={<UserTable />} />
-                </Routes>
+        <div className="container-fluid mt-3 ms-3">
+            <div className="row">
+                <div className="col-2">
+                    <ProjectNav />
+                </div>
+                <div className="col">
+                    <Routes>
+                        <Route path="/" element={<Navigate to="/project/home" />} />
+                        <Route path="signin" element={<Signin />} />
+                        <Route path="signup" element={<Signup />} />
+                        <Route path="account" element={<Account />} />
+                        <Route path="account/:id" element={<Account />} />
+                        <Route path="admin/users" element={<UserTable />} />
+                    </Routes>
+                </div>
             </div>
         </div>
     );

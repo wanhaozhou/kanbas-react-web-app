@@ -7,13 +7,15 @@ import * as client from "./client";
 
 const UserTable = () => {
     const [user, setUser] = useState({ username: "", password: "", role: "USER" });
+    const [error, setError] = useState(null);
 
     const createUser = async () => {
         try {
             const newUser = await client.createUser(user);
             setUsers([newUser, ...users]);
+            setError(null);
         } catch (err) {
-            console.log(err);
+            setError("Cannot create the user");
         }
     };
 
@@ -25,12 +27,18 @@ const UserTable = () => {
             console.log(err);
         }
     };
+
     const updateUser = async () => {
+        if (!user._id) {
+            setError("Cannot update the user");
+            return;
+        }
         try {
             await client.updateUser(user);
             setUsers(users.map((u) => (u._id === user._id ? user : u)));
+            setError(null);
         } catch (err) {
-            console.log(err);
+            setError("Cannot update the user");
         }
     };
 
@@ -44,16 +52,20 @@ const UserTable = () => {
     };
 
 
-
     const [users, setUsers] = useState([]);
     const fetchUsers = async () => {
         const users = await client.findAllUsers();
         setUsers(users);
     };
-    useEffect(() => { fetchUsers(); }, []);
+
+    useEffect(
+        () => { fetchUsers(); },
+        []
+    );
     return (
         <div>
             <h1>User List</h1>
+            {error && <div className="alert alert-danger">{error}</div>}
             <table className="table">
                 <thead>
                     <tr>
@@ -103,8 +115,8 @@ const UserTable = () => {
                             </select>
                         </td>
                         <td>
-                            <BsFillCheckCircleFill onClick={updateUser} className="me-2 text-success fs-1" />
                             <BsPlusCircleFill className="text-primary fs-1" onClick={createUser} />
+                            <BsFillCheckCircleFill onClick={updateUser} className="me-2 text-success fs-1" />
                         </td>
                     </tr>
 

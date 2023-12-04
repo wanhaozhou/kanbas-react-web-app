@@ -4,17 +4,27 @@ import { useNavigate } from "react-router-dom";
 import * as client from "./client";
 
 const Signin = () => {
+
+    const [error, setError] = useState(null);
+
     const [credentials, setCredentials] = useState({ username: "", password: "" });
     const navigate = useNavigate();
 
     const signin = async () => {
-        await client.signin(credentials);
-        navigate("/project/account");
+        const resp = await client.signin(credentials);
+        console.log(resp);
+        if (!resp) {
+            setError("Username or password is incorrect");
+        } else {
+            setError(null);
+            navigate("/project/account");
+        }
     };
 
     return (
         <div>
             <h1>Signin</h1>
+            {error && <div className="alert alert-danger">{error}</div>}
             <input
                 className="form-control"
                 value={credentials.username}

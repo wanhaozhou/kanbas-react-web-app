@@ -45,11 +45,12 @@ const Account = () => {
     return (
         <div className="w-50">
             <h1>Account</h1>
+            {!account && <div className="alert alert-danger">Please Signin</div>}
             {account && (
                 <div>
-                    <p>{account.username}</p>
+                    <p>Username: {account.username}</p>
                     <label>
-                        password
+                        Password
                         <input
                             className="form-control"
                             value={account.password}
@@ -60,7 +61,7 @@ const Account = () => {
                     </label>
                     <br />
                     <label>
-                        firstName
+                        First Name
                         <input
                             className="form-control"
                             value={account.firstName}
@@ -72,7 +73,7 @@ const Account = () => {
                     <br />
 
                     <label>
-                        lastName
+                        Last Name
                         <input
                             className="form-control"
                             value={account.lastName}
@@ -84,7 +85,7 @@ const Account = () => {
                     <br />
 
                     <label>
-                        dob
+                        Date of Birth
                         <input
                             className="form-control"
                             value={parseDate(account.dob)}
@@ -97,7 +98,7 @@ const Account = () => {
                     <br />
 
                     <label>
-                        email
+                        Email
                         <input
                             className="form-control"
                             value={account.email}
@@ -109,7 +110,7 @@ const Account = () => {
                     <br />
 
                     <label>
-                        role
+                        Role
                         <select
                             className="form-control"
                             onChange={(e) => setAccount({

@@ -19,7 +19,7 @@ const Signup = () => {
     return (
         <div>
             <h1>Signup</h1>
-            {error && <div>{error}</div>}
+            {error && <div className="alert alert-danger">{error}</div>}
             <input
                 placeholder="username"
                 className="form-control"
@@ -30,7 +30,7 @@ const Signup = () => {
                 })} />
             <input
                 placeholder="password"
-                className="form-control"
+                className="form-control mb-3"
                 value={credentials.password}
                 onChange={(e) => setCredentials({
                     ...credentials,
